@@ -1,0 +1,407 @@
+{% extends "smsforum/template_manage.html" %}
+{% load i18n %}
+{% load reporters %}
+{% block title %}The Jokko Initiative - A RapidSMS Project by Tostan{% endblock %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="/static/messaging/stylesheets/messaging.css" />
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="/static/webui/javascripts/jquery.cookie.yc.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Manage Memberships" %}</h1>
+
+a{{debug}}b
+{% if status %}
+<h4>{{status}}</h4>
+{% endif %}
+
+<div class="split">
+	<div class="left">
+		<div class="module recipients">
+			<h2>{% trans 'Contacts Unassociated With Any Community' %}({{num_reporters}})</h2>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Phone Number</th>
+					</tr>
+				</thead>
+				<tbody class="recips">
+					{% for reporter in reporters.object_list %}
+						<tr uid="{{ reporter.pk }}" class="{% if reporter.is_hit %}hit{% endif %}">
+							<td class="check"></td>
+							<td>{{ reporter.connection.identity }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2">
+							<div class="paginator">{% if reporters.has_previous %}
+								<a href="{% self_link "page" 1 %}" class="first" title="First page">First Page</a>
+								<a href="{% self_link "page" reporters.previous_page_number %}" class="prev" title="Previous page">Previous Page</a>{% else %}
+								<span class="first na" title="You are already on the first page">First Page</span>
+								<span class="prev na" title="There are no previous pages">Previous Page</span>{% endif %}{% for page in reporters.paginator.page_range %}
+								<a href="{% self_link "page" page %}"{% ifequal page reporters.number %} class="active"{% endifequal %} title="Page {{ page }}">{{ page }}</a>{% endfor %}{% if reporters.has_next %}
+								<a href="{% self_link "page" reporters.next_page_number %}" class="next" title="Next page">Next Page</a>
+								<a href="{% self_link "page" reporters.paginator.num_pages %}" class="last" title="Last page">Last Page</a>{% else %}
+								<span class="next na" title="There are no more pages">Next Page</span>
+								<span class="last na" title="You are already on the last page">Last Page</span>{% endif %}
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+    </div>
+	</div>
+	<div class="right">
+		<div class="module contents">
+			<h2>{% trans 'Communities ' %}</h2>
+			<form action="" method="POST">
+			<select name="community" size="15">
+				{% for community in communities.object_list %}
+					<option value="{{ community.pk }}">
+						{{ community.name }}
+					</option>
+				{% endfor %}
+			</select><br/>
+			<input type="submit" class="send" value="Add to Group" disabled="True"/>
+			</form>
+			
+		</div>
+	</div>
+	<div class="clear-hack"></div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		var search_form = $("div.module.recipients form.search");
+		var recip_div   = $("div.module.recipients");
+		var content_div = $("div.module.contents");
+			
+		var recip_rows  = $("tbody.recips tr", recip_div);
+		var clear_link  = $("tfoot a.clear", recip_div);
+		var all_link    = $("tfoot a.all",   recip_div);
+		var none_link   = $("tfoot a.none",  recip_div);
+	
+		var community_select = $("select",   content_div);
+		var send_btn   = $("input.send",     content_div);
+
+		/* this almost-global var holds the xmlhttprequest
+		 * currently sending messages, so it can be easily
+		 * cancelled anywhere in this scope */
+		var send_xhr = null;
+		
+
+		/* ======= *
+		 * HELPERS *
+		 * ======= */
+		
+		
+		/* returns an array containing the UID of every recipient
+		 * that is currently cookied with the specified status
+		 * (checked, error, or sent). this is not as simple as it
+		 * should be, because Array.split returns [""] for empty
+		 * strings (?!), and we must forgive superfluous spaces */
+		var cookie_recips = function(status) {
+			var flat_recips = $.trim($.cookie("recip-" + status));
+			return flat_recips ? flat_recips.split(/\s+/) : [];
+		};
+		
+		
+		/* removes all recipients of the specified status. there
+		 * is no equivalent "select all", because we don't know
+		 * all of the possible UIDs */
+		var clear_cookie_recips = function(status) {
+			$.cookie("recip-" + status, null);
+		};
+		
+		
+		/* iterate the recipients of the specified status, and re-
+		 * write the cookie after adding (value=true) or removing
+		 * (value=false) the reporter of UID */
+		var set_cookie_recip = function(uid, status, value) {
+			var recips = cookie_recips(status);
+			
+			if(value) {
+				if($.inArray(uid, recips) == -1)
+					recips.push(uid);
+			
+			} else {
+				recips = $.grep(recips, function(recip_uid) {
+					return recip_uid != uid;
+				});
+			}
+			
+			/* rebuild the flat cookie string from the array. if nothing
+			 * is are going to be stored, delete the cookie (=null) */
+			var flat_recips = recips.join(" ");
+			if(flat_recips == "") flat_recips = null;
+			$.cookie("recip-" + status, flat_recips);
+			
+			/* update the dom */
+			//update_row(uid);
+		};
+		
+		
+		/* returns the <tr> containing a recipient identified
+		 * by their UID, or an empty array if none was found.
+		 * NOTE: the UID could still be valid on another page! */
+		var row_via_uid = function(uid) {
+			return $("tbody.recips tr[uid=" + uid + "]", recip_div);
+		};
+		
+		
+		/* updates the class names of the reporter's row (by providing
+		 * either a jQuery object or a UID to fetch), by checking
+		 * for the UID in the various "recip-%s" cookies */
+		var update_row = function(row_or_uid) {
+			var row = (typeof(row_or_uid) == "object")
+			        ? $(row_or_uid) : row_via_uid(row_or_uid);
+			
+			$.each(["checked", "error", "sent", "hit"], function(n, status) {
+				var in_arr = $.inArray(row.attr("uid"), cookie_recips(status));
+				(in_arr == -1) ? row.removeClass(status) : row.addClass(status);
+			});
+			
+			/* update this row's icon's tooltip, depending on
+			 * the css classes it now has, via a "constant" */
+			$("td.check", row).attr("title", ICON_TOOLTIPS[row.attr("class")] || "");
+		};
+		
+		/* calls update_row for each row (note: this
+		 * DOES NOT cover recipients on other pages) */
+		var update_all_rows = function() {
+			recip_rows.each(function() {
+				update_row(this);
+			});
+		};
+		/* updates N in the caption of the "send N messages"
+		 * button, and disable it if we're not ready to send. */
+		var update_buttons = function() {
+			send_btn.attr("disabled", false);
+		};
+				
+		/* ====== *
+		 * EVENTS *
+		 * ====== */
+		
+		
+		/* when the "checked" class of the row is clicked (each <tr> displays
+		 * a single recipient), and add (or remove) the recipient's UID from
+		 * the cookie, to instruct views.py to pre-check this recipient the
+		 * next time we view them, in whatever context */
+		recip_rows.click(function(ev) {
+			var row = $(ev.target).parent("tr");
+			var uid = row.attr("uid");
+						
+			set_cookie_recip(uid, "checked", !row.hasClass("checked"));
+			
+			/* update the dom */
+			update_row(uid);
+		});
+		
+		community_select.click(function(ev) {
+			update_buttons();
+		});
+				
+		(function() {
+			var col_field = $("select[name=field]", search_form);
+			var op_field  = $("select[name=cmp]",   search_form);
+			var q_field   = $("input[name=query]",  search_form);
+			
+			var last_filters = null;
+			var timeout      = null;
+			var xhr          = null;
+			
+			/* remove the search filter */
+			var remove_filter = function() {
+				$("tbody.recips", recip_div).removeClass("filtered");
+				$.cookie("recip-search", null);
+				$.cookie("recip-hit", null);
+				if(xhr) xhr.abort();
+				update_all_rows();
+			};
+			
+			
+			/* when the CLEAR button is clicked, remove the
+			 * search filters AND reset the form. heavy-handed,
+			 * perhaps, but not resetting can lead to a weird
+			 * situation where the results do not represent what
+			 * is currently in the search form... */
+			$("input.clear", search_form).click(function(ev) {
+				remove_filter();
+				
+				/* congratulations on noticing that i am a hack,
+				 * and this calls the do_search function up to
+				 * THREE TIMES. don't worry, it won't call the
+				 * server, on account of q_field being empty */
+				if(ev.target) {
+					q_field.val("");
+					col_field.val("");
+					op_field.val("");
+				}
+			});
+			
+
+			/* if the ACCEPT button was clicked, we will
+			 * be adding all hits to the "checked" cookie.
+			 * otherwise, we will be subtracting them */
+			$(".accept, .unaccept", search_form).click(function(ev) {
+				var val = $(ev.target).hasClass("accept");
+				$.each(cookie_recips("hit"), function() {
+					set_cookie_recip(this, "checked", val);
+				});
+				
+				/* refresh the classes (and checked-
+				 * ness) of visible recipients */
+				update_all_rows();
+			});
+			
+			
+			var do_search = function(ev) {
+				
+				/* if a previous search is pending, cancel it.
+				 * the results are irrelevant now, and we might
+				 * even save an SQL query (OH YEAH!!!1) */
+				if(timeout) clearTimeout(timeout);
+				if(xhr) xhr.abort();
+				
+				/* schedule the query for a very short time in
+				 * the future, to avoid hitting the server on
+				 * every single keypress */
+				var delay = 200;
+				timeout = setTimeout(function() {
+					var q_val = q_field.val();
+					var col_v = col_field.val();
+					var op_v  = op_field.val();
+					var filters = {};
+					
+					/* don't bother searching if no
+					 * query has been entered yet */
+					if(q_val == "") {
+						remove_filter();
+						return false;
+					}
+					
+					/* build a query string using the Column and
+					 * Operation <selects> to create django filters */
+					var key = col_v + "__" + op_v;
+					filters[key] = q_val;
+					
+					/* don't search again if nothing
+					 * has changed since the last */
+					if(last_filters == (key+q_val)) return false;
+					last_filters = (key+q_val);
+					
+					xhr = $.get("{% url messaging-search %}", filters, function(data) {
+						
+						/* store both the RESULTS of this search, and
+						 * the form values that lead to it - so we can
+						 * repopulate the form if the user skips between
+						 * pages, without re-running the query */
+						$.cookie("recip-search", col_v + "|" + op_v +  "|" + q_val);
+						$.cookie("recip-hit", data);
+						
+						update_all_rows();
+						xhr = null;
+					});
+				}, delay);
+			};
+			
+			/* if there are form values saved, then
+			 * load them before we hook up the events
+			 * (to avoid triggering the search again) */
+			var saved_form = $.cookie("recip-search");
+			if(saved_form) {
+				vals = saved_form.split("|");
+				col_field.val(vals[0]);
+				op_field.val(vals[1]);
+				q_field.val(vals[2]);
+			}
+			
+			/* refresh the search every time any of the fields are
+			 * changed. rather inefficient, but the result of NOT
+			 * updating can be confusing as hell */
+			q_field.bind("keypress change", do_search);
+			col_field.change(do_search);
+			op_field.change(do_search);
+		})();
+		
+		
+		/* clears the statuses of all recipients (by
+		 * destroying the cookies) and update each row
+		 * of recipients (to remov the icon) */
+		clear_link.click(function(ev) {
+			ev.preventDefault();
+			
+			recip_rows.removeClass("busy");
+			$.cookie("recip-error", null);
+			$.cookie("recip-sent", null);
+			update_all_rows();
+		});
+		
+		
+		/* fetches a list of all uids from the server, which is
+		 * (conveniently) in the right format to jam straight into
+		 * the recip-checked cookie, to select ALL recipients. note
+		 * that we use a ghetto cache here, since the fetch can take
+		 * a few seconds on a slow connection */
+		(function() {
+			var ajax_cache = "";
+			
+			var apply = function() {
+				$.cookie("recip-checked", ajax_cache);
+				update_all_rows();
+			};
+			
+			all_link.click(function(ev) {
+				ev.preventDefault();
+				
+				/* if we've already fetched the uids,
+				 * copy them into the cookie immediately */
+				if(ajax_cache) {
+					apply();
+				
+				/* otherwise; fetch them via ajax,
+				 * cache them, and copy the cookie */
+				} else {
+					$.get(ev.target.href, function(data) {
+						ajax_cache = data;
+						apply();
+					});
+				}
+			});
+		})();
+		
+		
+		/* scraps the recip-checked cookie, to select
+		 * NO recipients without reloading the page */
+		none_link.click(function(ev) {
+			ev.preventDefault();
+			
+			$.cookie("recip-checked", null);
+			update_all_rows();
+		});
+		
+		
+		
+		
+		/* ============== *
+		 * INITIALIZATION *
+		 * ============== */
+		
+		/* update the dom now, to select cookied
+			* recipients and update the buttons */
+		update_all_rows();
+	});
+</script>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+If you are running rapidsms with runserver and router, use:
+rapidsms-init.sh
+rapidsms.cron
+
+If you are running rapidsms with router and apache, use only:
+route-init.sh
+route.cron
+(since apache will handle its own failure recovery)
+

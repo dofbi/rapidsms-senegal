@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block stylesheets %}
+	<link type="text/css" rel="stylesheet" href="/static/smsforum/stylesheets/style.css" />
+{% endblock %}
+
+{% block subheader %} 
+	<a href="{% url export %}">
+	<img src="/static/tostan/images/export.png" height=50 width=50/>
+	</a>
+	<span class="template-header">{% trans "EXPORT" %}</span>
+{% endblock subheader %}

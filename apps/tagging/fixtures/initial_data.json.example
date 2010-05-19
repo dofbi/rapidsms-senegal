@@ -1,0 +1,1684 @@
+[
+    {
+        "pk": 1, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "category_root"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Les Activit\u00e9s de Jeunesse\""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Activit\u00e9s Scolaires\""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Activit\u00e9s Sportives\""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Activit\u00e9s Culturelles\""
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Activit\u00e9s des divertissements\""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Autres"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"La  Sante\""
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Vaccination"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Distribution de mat\u00e9riaux\""
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Sensibilisation/Pr\u00e9vention"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Malaria, HIV\""
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Le mariage pr\u00e9coce\""
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Excision"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Protection d\u2019enfants\""
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Violence Conjugale\""
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Sante de la reproduction\""
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Genre- Les Femmes\""
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Sante\""
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Alerte  sanitaire\""
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Cholera"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Paludisme"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Gravement malade\""
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Accident"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "D\u00e9c\u00e8s"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Alerte  sanitaire\""
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Education"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Annonce du d\u00e9but des Cours\""
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Scolarisation"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Rencontre  professeur/ parents\""
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Remise de bulletin\""
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Atelier de partage Tostan\""
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Education\""
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "F\u00eates"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Mariage/Bapt\u00eame"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"F\u00eate Religieux\""
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"F\u00eate Nationale\""
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"F\u00eate Civile\""
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres F\u00eates\""
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Religion"
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Activit\u00e9s Economiques\""
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"AGR- Activit\u00e9s G\u00e9n\u00e9ratrices de Revenues\""
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Exchange de Prix\""
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Annonce de marche/ louma\""
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Activit\u00e9s Economiques\""
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Environnement/Pr\u00e9servation de l\u2019environnement\""
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Nettoyage de la communaut\u00e9\""
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Alerte incendie\""
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Les ensablements/Glissements de terrain\""
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Pollution de l\u2019eau\""
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "D\u00e9sertification"
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Reboisement"
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Energie Renouvelables\""
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Environnement\""
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Rencontres/R\u00e9unions"
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"R\u00e9union des villages/ inter-villageoises/femmes\""
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Pr\u00e9sence de la presse/ Participation de Media\""
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Pr\u00e9sence d\u2019autorit\u00e9\""
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"r\u00e8glement des probl\u00e8mes communautaires\""
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"R\u00e9union d\u2019ONG\""
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"R\u00e9union de Tostan\""
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Rencontres/R\u00e9unions\""
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Les Messages Personnels\""
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "Salutations"
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "V\u0153ux"
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Gouvernance/Gouvernance Locale\""
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Election de leaders\""
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Annonce d\u2019\u00e9lection\""
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "nodegraph.node", 
+        "fields": {
+            "debug_id": "\"Autres Gouvernance/Gouvernance Locale\""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                2, 
+                8, 
+                27, 
+                34, 
+                40, 
+                41, 
+                46, 
+                55, 
+                63, 
+                66
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                9, 
+                10, 
+                11, 
+                19, 
+                20, 
+                26
+            ]
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                12, 
+                13, 
+                14, 
+                15, 
+                16, 
+                17, 
+                18, 
+                19
+            ]
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                21, 
+                22, 
+                23, 
+                24, 
+                25, 
+                26
+            ]
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                28, 
+                29, 
+                30, 
+                31, 
+                32, 
+                33
+            ]
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                35, 
+                36, 
+                37, 
+                38, 
+                39
+            ]
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                42, 
+                43, 
+                44, 
+                45
+            ]
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                47, 
+                48, 
+                49, 
+                50, 
+                51, 
+                52, 
+                53, 
+                54
+            ]
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                56, 
+                57, 
+                58, 
+                59, 
+                60, 
+                61, 
+                62
+            ]
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                64, 
+                65
+            ]
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": [
+                67, 
+                68, 
+                69
+            ]
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "nodegraph.nodeset", 
+        "fields": {
+            "_children": []
+        }
+    },
+    {
+        "pk": 5, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Activit\u00e9s Culturelles\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Activit\u00e9s des divertissements\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Activit\u00e9s Economiques\"", 
+            "_children": [
+                42, 
+                43, 
+                44, 
+                45
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Activit\u00e9s Scolaires\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Activit\u00e9s Sportives\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"AGR- Activit\u00e9s G\u00e9n\u00e9ratrices de Revenues\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Alerte  sanitaire\"", 
+            "_children": [
+                21, 
+                22, 
+                23, 
+                24, 
+                25, 
+                26
+            ]
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Alerte incendie\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Annonce de marche/ louma\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Annonce du d\u00e9but des Cours\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Annonce d\u2019\u00e9lection\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Atelier de partage Tostan\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Activit\u00e9s Economiques\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Alerte  sanitaire\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Education\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Environnement\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres F\u00eates\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Gouvernance/Gouvernance Locale\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Rencontres/R\u00e9unions\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Autres Sante\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Distribution de mat\u00e9riaux\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Election de leaders\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Energie Renouvelables\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Environnement/Pr\u00e9servation de l\u2019environnement\"", 
+            "_children": [
+                47, 
+                48, 
+                49, 
+                50, 
+                51, 
+                52, 
+                53, 
+                54
+            ]
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Exchange de Prix\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"F\u00eate Civile\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"F\u00eate Nationale\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"F\u00eate Religieux\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Genre- Les Femmes\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Gouvernance/Gouvernance Locale\"", 
+            "_children": [
+                67, 
+                68, 
+                69
+            ]
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Gravement malade\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"La  Sante\"", 
+            "_children": [
+                9, 
+                10, 
+                11, 
+                19, 
+                20, 
+                26
+            ]
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Le mariage pr\u00e9coce\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Les Activit\u00e9s de Jeunesse\"", 
+            "_children": [
+                3, 
+                4, 
+                5, 
+                6, 
+                7
+            ]
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Les ensablements/Glissements de terrain\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Les Messages Personnels\"", 
+            "_children": [
+                64, 
+                65
+            ]
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Malaria, HIV\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Nettoyage de la communaut\u00e9\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Pollution de l\u2019eau\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Pr\u00e9sence de la presse/ Participation de Media\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Pr\u00e9sence d\u2019autorit\u00e9\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Protection d\u2019enfants\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"r\u00e8glement des probl\u00e8mes communautaires\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Remise de bulletin\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Rencontre  professeur/ parents\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"R\u00e9union de Tostan\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"R\u00e9union des villages/ inter-villageoises/femmes\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"R\u00e9union d\u2019ONG\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Sante de la reproduction\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "\"Violence Conjugale\"", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Accident", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Autres", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "category_root", 
+            "_children": [
+                2, 
+                8, 
+                27, 
+                34, 
+                40, 
+                41, 
+                46, 
+                55, 
+                63, 
+                66
+            ]
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Cholera", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "D\u00e9c\u00e8s", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "D\u00e9sertification", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Education", 
+            "_children": [
+                28, 
+                29, 
+                30, 
+                31, 
+                32, 
+                33
+            ]
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Excision", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "F\u00eates", 
+            "_children": [
+                35, 
+                36, 
+                37, 
+                38, 
+                39
+            ]
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Mariage/Bapt\u00eame", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Paludisme", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Reboisement", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Religion", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Rencontres/R\u00e9unions", 
+            "_children": [
+                56, 
+                57, 
+                58, 
+                59, 
+                60, 
+                61, 
+                62
+            ]
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Salutations", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Scolarisation", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Sensibilisation/Pr\u00e9vention", 
+            "_children": [
+                12, 
+                13, 
+                14, 
+                15, 
+                16, 
+                17, 
+                18, 
+                19
+            ]
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "Vaccination", 
+            "_children": []
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "tagging.tag", 
+        "fields": {
+            "name": "V\u0153ux", 
+            "_children": []
+        }
+    } 
+]

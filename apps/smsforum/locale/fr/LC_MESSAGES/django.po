@@ -1,0 +1,2383 @@
+# vim: ai ts=4 sts=4 et sw=4 encoding=utf-8
+# 
+# Language eng translations for PACKAGE package.
+# Copyright (C) 2009 ORGANIZATION
+# Rowena <rowena@rowena-vm>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-30 03:16+0000\n"
+"PO-Revision-Date: 2009-12-08 10:18-0000\n"
+"Last-Translator: \n"
+"Language-Team: Language fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: app.py:158
+msgid "join"
+msgstr "entrer"
+# as in 'join community Ziguinchor'
+
+msgid "name"
+msgstr "nom"
+# as in 'the name with which i would like to be referred'
+
+#: app.py:158
+msgid "leave"
+msgstr "quitter"
+# as in 'leave community Ziguinchor'
+
+# set language or show supported languages
+# e.g. '.language english'
+msgid "language"
+msgstr "langage"
+
+msgid "help"
+msgstr "aide"
+# as in 'help me use this sms system'
+
+msgid "create"
+msgstr "créer"
+# as in 'create new community Ziguinchor'
+
+msgid "remove"
+msgstr "enlever"
+# as in "i am a member of this village"
+
+msgid "member"
+msgstr "membre"
+# as in "i am a member of this village"
+
+# show all members of a village
+# e.g. '.citizens village_name'
+msgid "citizens"
+msgstr "citoyens"
+
+#
+# SMS App strings
+#
+
+# exception caught somewhere in processing, nothing
+# really to do!
+msgid "internal-error"
+msgstr "ERROR: Désolé, il y a eu un problème. Merci d'envoyer à nouveau plus tard" 
+
+# used for placeholder in help messages--e.g.
+# Please enter a name like 'village name'
+msgid "village_name"
+msgstr "nom de communauté"
+
+# exact match village argument not found
+msgid "village-not-known %(unknown)s"
+msgstr "Je ne peux pas trouver le communauté '%(unknown)s'"
+
+# system does not know requested village.
+# 'suggested' is a list of known villages to suggest to the user
+msgid "village-not-found %(suggested)s"
+msgstr "Désolé, je ne reconnais pas cet endroit. Est-ce que vous pensez de l'un de ceci? %(suggested)s"
+
+# sent when received command not found
+msgid "command-not-understood"
+msgstr "Désolé, je ne peux pas comprendre cet ordre. Txter '#aide' pour voir une liste des ordres acceptables"
+
+# sent when command not found, but the system found some
+# useful suggestions
+msgid "command-not-understood %(sug_1)s %(sug_rest)s"
+msgstr "Désolé, je ne peux pas comprendre cet ordre. Est-ce que vous voulez dire: %(sug_1)s ou %(sug_rest)s?"
+
+# message blast failed because sender is not in any village
+msgid "blast-fail_not-member-of-any-village"
+msgstr "SVP, rejoignez une communauté avant d'envoyer un message. Escrivez 123 entrer puis 'nom de communcauté'"
+
+# message blast failed because message text was too long
+msgid "blast-fail_message-too-long_ucs2 %(msg_len)d %(max_unicode)d"
+msgstr "Désolé, ce message fait plus de %(max_unicode)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+# message blast failed because message text was too long
+msgid "blast-fail_message-too-long %(msg_len)d %(max_latin)d"
+msgstr "Désolé, ce message fait plus de %(max_latin)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+# outgoing message sent on blasts
+msgid  "blast-message_outgoing %(text)s %(recipients)s %(sender)s"
+msgstr "%(text)s - %(sender)s"
+
+msgid "blast-acknowledge %(text)s %(recipients)s"
+msgstr "Votre message a été envoyé à: %(recipients)s"
+
+# when 'citizens' command is sent with no village
+msgid "citizens-fail_no-village"
+msgstr "Merci de renvoyer avec le nom d'un communauté. Par example, '.citizens communauté'"
+
+# successful response to 'citizen' command
+msgid "citizens-success %(village)s %(citizens)s"
+msgstr "%(village)s: %(citizens)s"
+
+# successful response to 'citizen' command when longer than n members
+msgid "citizens-success_long-list %(village)s %(citizens)s"
+msgstr "%(village)s: %(citizens)s et plus"
+
+msgid "create-village-fail_no-village-name"
+msgstr "SVP envoyer un nom pour le communauté, e.g. 123 entrer 'nom de communauté'"
+
+msgid "create-village-fail_village-already-exists %(village)s"
+msgstr "La communauté %(village)s existe déjà"
+
+msgid "create-village-fail_name-too-long %(village)s %(max_char)d"
+msgstr "Désolé, ce nom fait plus de %(max_char)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+msgid "create-village-success %(village)s"
+msgstr "La communauté %(village)s a été créée"
+
+msgid "direct-blast-acknowledge %(text)s %(recipient)s"
+msgstr "Votre message a été envoyé à: %(recipient)s"
+
+msgid "direct-blast-fail_recipient-not-found %(recipient)s"
+msgstr "Je ne peux pas envoyer cette message. Je ne peux pas trouvé '%(recipient)s'"
+
+msgid "direct-blast-fail_too-many-recipients %(recip_1)s and %(recip_rest)s"
+msgstr "Je ne peux pas trouver ce recipient. Est-ce que vous voulez dire %(recip_1)s?"
+
+# Help with commands for specific languages. Should
+# send the commands for the given language translated to this
+# language.
+msgid "help-with-commands_fr"
+msgstr "123 entrer 123 quitter 123 nom 123 langage 123 aide"
+
+msgid "help-with-commands_en"
+msgstr ".join (entrer) .leave (quitter) .name (nom) .language (langage) .help (aide)"
+
+msgid "help-with-commands_pul"
+msgstr ".naattugol (entrer) .yaltude (quitter) .yettoode (nom) .lang (langage) .help-pul (aide)"
+
+msgid "help-with-commands_wol"
+msgstr ".duggu (entrer) .genn (quitter) .sant (nom) .lang (langage) .help-wol (aide)"
+
+msgid "help-with-commands_dyu"
+msgstr ".unoken (entrer) .upur (quitter) .karees (nom) .lang (langage) .rambenom (aide)"
+
+msgid "help-with-commands_snk"
+msgstr "123 ro (entrer) 123 giri (quitter) 123 toxo (nom) 123 lang (langage) 123 deema (aide)"
+
+msgid "help-with-commands_mnk"
+msgstr "123 koo (entrer) 123 nbetaamala (quitter) 123 ntoo (nom) 123 lang (langage) 123 n'deemaa (aide)"
+
+msgid "help-with-commands"
+msgstr "Vous pouvez texter: #entrer COMMUNAUTE - #quitter - #nom NOM - #lang LANG"
+
+# sent to user who does not have 'send' permissions
+msgid "inbound-message_rejected"
+msgstr "Vous ne pouvez pas envoyer les messages. Vous n'avez pas le permission d'envoyer."
+
+msgid "join-success %(village)s"
+msgstr "Merci d'avoir rejoint la communauté '%(village)s' - bienvenue!"
+
+# List of languages system supports sent in response to
+# blank '.language' command
+msgid "language-set-fail_code-not-understood %(langs)s"
+msgstr "Vous pouvez utiliser un des langues suivants: %(langs)s"
+
+msgid "language-set-success %(lang)s"
+msgstr "La langue que vous avez sélectionnée est '%(lang)s'"
+
+msgid "leave-success %(villages)s"
+msgstr "Vous venez de quitter la communauté '%(villages)s' Au revoir!"
+
+msgid "leave-fail_village-not-found %(village)s"
+msgstr "Je ne peux pas trouver la communauté quit s'appelle '%(village)s'"
+
+msgid "leave-fail_not-member-of-village"
+msgstr "Vous n'appartenez à aucune communauté pour le moment. Pour nous rejoindre, vueillez écrire # puis 'nom de village"
+
+# when 'member' command sent by user who is not member of
+# any village
+msgid "member-fail_not-member-of-village"
+msgstr "Vous n'etes pas parti d'aucune communauté"
+
+# successful response to 'member' command
+msgid "member-success %(village_names)s"
+msgstr "Vous etes membre des communautés suivants: %(village_names)s"
+
+# successful response to 'member' command when longer than n villages
+msgid "member-success_long-list %(village_names)s"
+msgstr "Vous etes membre des communautés suivants: %(village_names)s et de plus"
+
+msgid "name-register-success %(name)s"
+msgstr "Bonjour %(name)s. Merci d'avoir enregistré votre nom! Il apparaitra dorénavant sur tous les messages que vous envoyez"
+
+msgid "name-register-fail_name-too-long %(name)s %(max_char)d"
+msgstr "Désolé, ce nom fait plus de %(max_char)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+msgid "name-acknowledge %(name)s"
+msgstr "Vous etes enregistré avec le nom: %(name)s"
+
+msgid "remove-fail_no-village"
+msgstr "Merci de renvoyer avec le nom d'une communauté, e.g.: '.enlever village'"
+
+msgid "remove-success %(village)s"
+msgstr "La communauté '%(village)s' a eté enlevée."
+
+
+#
+# SMSFORUM Web UI Strings
+# (in addition to those above)
+#
+
+#: .\apps\contacts\views.py:40
+#, fuzzy, python-format
+msgid "Contact '%(member_name)s' successfully created"
+msgstr "Le contact %(village_name)s a été créé"
+
+# as in "i am a member of this village"
+#: .\apps\contacts\views.py:40
+#: .\apps\smsforum\views.py:489
+#, fuzzy
+msgid "member_name"
+msgstr "nom du membre"
+
+#: .\apps\contacts\views.py:44
+#: .\apps\smsforum\views.py:452
+msgid "Add Member"
+msgstr "Ajouter un membre"
+
+#: .\apps\contacts\views.py:55
+#, fuzzy, python-format
+msgid "Contact '%(contact_name)s' successfully updated"
+msgstr "Le contact '%(member_name)s' a été mis à jour"
+
+#: .\apps\contacts\views.py:56
+#: .\apps\smsforum\views.py:513
+msgid "contact_name"
+msgstr "nom du contact"
+
+#: .\apps\contacts\views.py:62
+#: .\apps\smsforum\views.py:519
+msgid "Edit Member"
+msgstr "Modifier le membre"
+
+#: .\apps\smsforum\templates\smsforum\community_alias.html
+msgid "Alias of '%(community_name)'"
+msgstr "Alias de la communaute de '%(community_name)'"
+
+
+#: .\apps\contacts\templates\contacts\confirm_delete.html.py:11
+#: .\apps\smsforum\templates\smsforum\confirm_delete.html.py:11
+msgid "Are you sure? "
+msgstr "Vous êtes sûr ?"
+
+#: .\apps\contacts\templates\contacts\confirm_delete.html.py:21
+#: .\apps\smsforum\templates\smsforum\confirm_delete.html.py:20
+msgid "Yes, I'm sure"
+msgstr "Oui, je suis sûr."
+
+#: .\apps\contacts\templates\contacts\edit.html.py:24
+msgid "Delete This Contact"
+msgstr "Supprimer le contact"
+
+#: .\apps\contacts\templates\contacts\index.html.py:3
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:5
+msgid "Contacts"
+msgstr "Contacts"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:7
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:10
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:10
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:13
+msgid "for"
+msgstr "de"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:17
+#: .\apps\smsforum\templates\smsforum\member.html.py:22
+#: .\apps\smsforum\templates\smsforum\members.html.py:20
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:15
+msgid "ID"
+msgstr "Identification"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:19
+#: .\apps\smsforum\templates\smsforum\member.html.py:17
+#: .\apps\smsforum\templates\smsforum\members.html.py:15
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:10
+msgid "Common Name"
+msgstr "Pseudonyme"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:20
+#: .\apps\smsforum\templates\smsforum\member.html.py:18
+#: .\apps\smsforum\templates\smsforum\members.html.py:16
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:11
+msgid "Given Name"
+msgstr "Nom"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:21
+#: .\apps\smsforum\templates\smsforum\member.html.py:19
+#: .\apps\smsforum\templates\smsforum\members.html.py:17
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:12
+msgid "Family Name"
+msgstr "Nom de famille"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:22
+#: .\apps\smsforum\templates\smsforum\member.html.py:20
+#: .\apps\smsforum\templates\smsforum\members.html.py:18
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:13
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:26
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:16
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:89
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:24
+#: .\apps\smsforum\templates\smsforum\member.html.py:24
+#: .\apps\smsforum\templates\smsforum\members.html.py:22
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:17
+msgid "Gender"
+msgstr "Sexe"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:25
+#: .\apps\smsforum\templates\smsforum\member.html.py:25
+#: .\apps\smsforum\templates\smsforum\members.html.py:23
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:18
+msgid "Age"
+msgstr "Age"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:47
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:60
+msgid "Add a Contact"
+msgstr "Ajouter contact"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:58
+#: .\apps\smsforum\templates\smsforum\members.html.py:63
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:60
+msgid "No members yet"
+msgstr "Aucun membre inscrit"
+
+#: .\apps\contacts\templates\contacts\partials\contacts.html.py:78
+#: .\apps\smsforum\templates\smsforum\history.html.py:43
+msgid "Export to CSV"
+msgstr "Exporter vers Excel"
+
+#: .\apps\django_extensions\admin\__init__.py:105
+msgid "and"
+msgstr "et"
+
+# as in 'help me use this sms system'
+#: .\apps\django_extensions\db\models.py:15
+#, fuzzy
+msgid "created"
+msgstr "créé"
+
+#: .\apps\logger\templates\logger\index.html.py:44
+msgid "Export Incoming Messages"
+msgstr "Export des messages reçus"
+
+#: .\apps\logger\templates\logger\index.html.py:45
+msgid "Export Outgoing Messages"
+msgstr "Export des messages envoyés"
+
+#: .\apps\smsforum\views.py:330
+msgid "EDIT VILLAGE"
+msgstr "MODIFIER COMMUNAUTE"
+
+#: .\apps\smsforum\views.py:361
+msgid "EDIT REGION"
+msgstr "MODIFIER REGION"
+
+#: .\apps\smsforum\views.py:390
+#, fuzzy, python-format
+msgid "Village '%(village_name)s' successfully created"
+msgstr "La communauté '%(communauté_nom)s' a eté créée"
+
+# msgstr "Village %(village_name)s a ete cree"
+#: .\apps\smsforum\views.py:392
+msgid "Village already exists!"
+msgstr "Cette communauté existe déjà"
+
+#: .\apps\smsforum\views.py:394
+#: .\apps\smsforum\views.py:411
+msgid "Form invalid"
+msgstr "Formulaire non valable"
+
+#: .\apps\smsforum\views.py:396
+msgid "Add Village"
+msgstr "Ajouter communauté"
+
+#: .\apps\smsforum\views.py:407
+#, fuzzy, python-format
+msgid "Region '%(village_name)s' successfully created"
+msgstr "Région '%(communauté_nom)s' a été créée"
+
+# msgstr "Communauté %(communauté_nom)s a été créée"
+#: .\apps\smsforum\views.py:409
+#, fuzzy
+msgid "Region already exists!"
+msgstr "Cette existe déjà"
+
+#: .\apps\smsforum\views.py:413
+msgid "Add Region"
+msgstr "Ajouter région"
+
+#: .\apps\smsforum\views.py:488
+#, fuzzy, python-format
+msgid "Member '%(member_name)s' successfully %(action)s"
+msgstr "Le membre '%(member_name)s' a ete créé"
+
+#: .\apps\smsforum\views.py:493
+#, python-format
+msgid " and added to village: %s"
+msgstr "et ajouté à la communauté : %s"
+
+#: .\apps\smsforum\views.py:500
+#, python-format
+msgid "Add Member %s to village %s"
+msgstr "Ajouter membre %s à la communauté %s"
+
+#: .\apps\smsforum\views.py:512
+#, fuzzy, python-format
+msgid "Member '%(contact_name)s' successfully updated"
+msgstr "Le membre '%(member_name)s' a été créé"
+
+#: .\apps\smsforum\templates\smsforum\edit.html.py:24
+#: .\apps\smsforum\templates\smsforum\partials\village.html.py:26
+msgid "Delete This Village"
+msgstr "Supprimer communauté"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:5
+msgid "History of"
+msgstr "Historique"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:10
+msgid "History of "
+msgstr "Historique"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:14
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:23
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:13
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:86
+msgid "Date"
+msgstr "Date"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:15
+msgid "Person"
+msgstr "Personne"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:16
+msgid "Event"
+msgstr "Evènement"
+
+#: .\apps\smsforum\templates\smsforum\history.html.py:29
+msgid "Nothing has happened yet"
+msgstr "Aucune activité initiée"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:4
+#: .\apps\smsforum\templates\smsforum\index.html.py:14
+#: .\apps\smsforum\templates\smsforum\visualize.html.py:3
+#: .\apps\smsforum\templates\smsforum\partials\search.html.py:9
+#: .\apps\smsforum\templates\smsforum\partials\total.html.py:9
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:5
+msgid "Villages"
+msgstr "Communautés"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:18
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:9
+msgid "Name"
+msgstr "Nom"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:19
+#: .\apps\smsforum\templates\smsforum\partials\search.html.py:10
+#: .\apps\smsforum\templates\smsforum\partials\total.html.py:10
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:10
+msgid "Members"
+msgstr "Membres"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:20
+msgid "Messages Initiated This Week"
+msgstr "Messages envoyés cette semaine"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:22
+msgid "Messages Received This Week"
+msgstr "Messages reçus cette semaine"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:35
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:26
+msgid "No villages yet"
+msgstr "Aucune communauté"
+
+#: .\apps\smsforum\templates\smsforum\index.html.py:37
+#: .\apps\smsforum\templates\smsforum\index.html.py:51
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:28
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:44
+msgid "Add a Village"
+msgstr "Ajouter communauté"
+
+#: .\apps\smsforum\templates\smsforum\manage.html.py:8
+#: .\apps\smsforum\templates\smsforum\manage_regions.html.py:8
+msgid "Manage Site Data"
+msgstr "Gestion des données"
+
+#: .\apps\smsforum\templates\smsforum\manage.html.py:9
+#: .\apps\tostan\templates\tostan\dashboard.html.py:9
+msgid "What would you like to do?"
+msgstr "Que souhaitez-vous faire ?"
+
+# as in "i am a member of this village"
+# show all members of a village
+# e.g. '.citizens village_name'
+#: .\apps\smsforum\templates\smsforum\manage.html.py:27
+msgid "Edit, translate, and categorize messages"
+msgstr "Modifier, traduire ou categoriser les messages"
+
+#: .\apps\smsforum\templates\smsforum\manage.html.py:34
+msgid "Manage accessibility of the SMS and websites"
+msgstr "Gestion d'accès aux messages et au site web"
+
+#: .\apps\smsforum\templates\smsforum\manage_access.html.py:8
+#: .\apps\tostan\templates\tostan\404.html.py:8
+msgid "Coming Soon"
+msgstr "Travaux en cours"
+
+#: .\apps\smsforum\templates\smsforum\manage_messages.html.py:8
+msgid "Manage Messages"
+msgstr "Gestion des messages"
+
+#: .\apps\smsforum\templates\smsforum\member.html.py:26
+#: .\apps\smsforum\templates\smsforum\members.html.py:26
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:21
+msgid "Date Joined"
+msgstr "Date d'inscription"
+
+#: .\apps\smsforum\templates\smsforum\member.html.py:27
+#: .\apps\smsforum\templates\smsforum\members.html.py:24
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:19
+msgid "Sent To Tostan"
+msgstr "Envoyés à Tostan"
+
+#: .\apps\smsforum\templates\smsforum\member.html.py:28
+msgid "Sent This Week"
+msgstr "Envoyés cette semaine"
+
+#: .\apps\smsforum\templates\smsforum\member.html.py:29
+msgid "Sent This Month"
+msgstr "Envoyés ce mois"
+
+#: .\apps\smsforum\templates\smsforum\member.html.py:30
+msgid "Received from Tostan"
+msgstr "Reçus de Tostan"
+
+#: .\apps\smsforum\templates\smsforum\members.html.py:4
+msgid "Members of"
+msgstr "Membres de"
+
+#: .\apps\smsforum\templates\smsforum\members.html.py:25
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:20
+msgid "Received From Tostan"
+msgstr "Reçus de Tostan"
+
+#: .\apps\smsforum\templates\smsforum\members.html.py:52
+#: .\apps\smsforum\templates\smsforum\members.html.py:65
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:48
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:63
+msgid "Add a Member"
+msgstr "Ajouter membre"
+
+#: .\apps\smsforum\templates\smsforum\members.html.py:83
+#: .\apps\smsforum\templates\smsforum\partials\citizens.html.py:82
+msgid "View History"
+msgstr "Voir l'historique"
+
+#
+# SMSFORUM Web UI Strings
+# (in addition to those above)
+#
+#: .\apps\smsforum\templates\smsforum\members.html.py:85
+msgid "Edit Village"
+msgstr "Modifier la communauté"
+
+#: .\apps\smsforum\templates\smsforum\template_manage.html.py:11
+msgid "MANAGE"
+msgstr "GESTION"
+
+#: .\apps\smsforum\templates\smsforum\template_messages.html.py:11
+msgid "MESSAGES"
+msgstr "MESSAGES"
+
+#: .\apps\smsforum\templates\smsforum\template_visualize.html.py:11
+msgid "VISUALIZE"
+msgstr "VISUALISER"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:8
+msgid "Messages"
+msgstr "Messages"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:24
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:14
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:87
+msgid "Message"
+msgstr "Messages"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:28
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:18
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:91
+msgid "Village"
+msgstr "Communauté"
+
+msgid "Communities"
+msgstr "Les Communautés"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:29
+msgid "Translation"
+msgstr "Traduction"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:30
+msgid "Category"
+msgstr "Catégorie"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:88
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:59
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:105
+msgid "No messages yet"
+msgstr "Aucun message"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages.html.py:101
+msgid "Save Translations"
+msgstr "Enregistrer la traduction"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:8
+msgid "Content Messages"
+msgstr "Contenu des messages"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:19
+msgid "Annotation"
+msgstr "Remarques"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:20
+msgid "Flag"
+msgstr "Signal"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:21
+msgid "Code"
+msgstr "Code"
+
+#: .\apps\smsforum\templates\smsforum\partials\messages_sorted.html.py:81
+msgid "Control Messages"
+msgstr "Contrôler messages"
+
+#: .\apps\smsforum\templates\smsforum\partials\region_community_dropdown.html.py:10
+msgid "Filter by Region"
+msgstr "Filtrer par région"
+
+#: .\apps\smsforum\templates\smsforum\partials\region_community_dropdown.html.py:20
+msgid "Filter by Village"
+msgstr "Filtrer par communauté"
+
+#: .\apps\smsforum\templates\smsforum\partials\region_community_dropdown.html.py:20
+msgid "Filter by Community"
+msgstr "Filtrer par communauté"
+
+#: .\apps\smsforum\templates\smsforum\partials\search.html.py:4
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:57
+msgid "Search"
+msgstr "Rechercher"
+
+#: .\apps\smsforum\templates\smsforum\partials\search.html.py:12
+#: .\apps\smsforum\templates\smsforum\partials\total.html.py:12
+msgid "Sent To Tostan This Week"
+msgstr "Envoyés à Tostan cette semaine"
+
+#: .\apps\smsforum\templates\smsforum\partials\search.html.py:13
+#: .\apps\smsforum\templates\smsforum\partials\total.html.py:13
+msgid "Sent From Tostan"
+msgstr "Envoyés de Tostan"
+
+#: .\apps\smsforum\templates\smsforum\partials\total.html.py:4
+msgid "Totals"
+msgstr "Total"
+
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:11
+msgid "Messages Sent"
+msgstr "Messages envoyés"
+
+#: .\apps\smsforum\templates\smsforum\partials\villages.html.py:12
+msgid "Messages Sent This Week"
+msgstr "Messages envoyés cette semaine"
+
+#: .\apps\tostan\models.py:13
+msgid "Female"
+msgstr "de sexe feminin"
+
+#: .\apps\tostan\models.py:13
+msgid "Male"
+msgstr "de sexe masculin"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:7
+msgid "Welcome!"
+msgstr "Bienvenue !"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:15
+msgid "Visualize the messages and the citizens of one or a group of communities"
+msgstr "Visualiser les messages et les membres d'une communauté ou un groupe de communautés"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:22
+msgid "Send an SMS message to one or a group of communities"
+msgstr "Envoyer un message à une communauté ou un groupe de communautés"
+
+msgid "Send an SMS Message"
+msgstr "Envoyer un message SMS"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:29
+msgid "Export data to Excel"
+msgstr "Exporter des données vers Excel"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:36
+msgid "Manage communities, citizens, and messages"
+msgstr "Gestion des communautés, des membres et des messages"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:36
+msgid "Manage Community Membership"
+msgstr "Gestion des membres des communautés"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:44
+msgid "SMS Command Reference"
+msgstr "Référence des commandes SMS"
+
+#: .\apps\tostan\templates\tostan\dashboard.html.py:48
+msgid "Credits and Contacts"
+msgstr "Remerciements et coordonnées"
+
+#: .\apps\tostan\templates\tostan\export.html.py:8
+msgid "Export Data to Excel"
+msgstr "Exporter les données vers Excel"
+
+#: .\apps\tostan\templates\tostan\export.html.py:13
+msgid "SMS Users"
+msgstr "Utilisateurs SMS"
+
+#: .\apps\tostan\templates\tostan\export.html.py:18
+msgid "Messages sent to Tostan"
+msgstr "Messages envoyés à Tostan"
+
+#: .\apps\tostan\templates\tostan\export.html.py:33
+msgid "Current Membership"
+msgstr "Inscription actuelle"
+
+msgid "Membership"
+msgstr "Gestion des Membres Des Communautés"
+
+#: .\apps\tostan\templates\tostan\export.html.py:38
+msgid "Membership Activity Log"
+msgstr "Historiques d'activités du membre"
+
+#: .\apps\tostan\templates\tostan\layout.html.py:72
+#: .\apps\webui\templates\layout.html.py:71
+msgid "Back to Home Page"
+msgstr "Retourner à la page d'acceuil"
+
+#: .\apps\tostan\templates\tostan\template_export.html.py:11
+msgid "EXPORT"
+msgstr "EXPORTER"
+
+#: .\apps\tree\app.py:89
+#, python-format
+msgid "\"%(answer)s\" is not a valid answer. You must enter %(hint)s"
+msgstr "\"%(answer)s\" n'est pas une réponse valable. Veuillez entrer %(hint)s"
+
+#: .\apps\tree\app.py:101
+#, python-format
+msgid "Sorry, invalid answer %(retries)s times. Your session will now end. Please try again later."
+msgstr "%(retries)s réponses non valables. Votre séance sera maintenant terminé"
+
+#: .\apps\userprofile\countries.py:10
+msgid "Andorra"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:11
+msgid "United Arab Emirates"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:12
+msgid "Afghanistan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:13
+msgid "Antigua & Barbuda"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:14
+msgid "Anguilla"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:15
+msgid "Albania"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:16
+msgid "Armenia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:17
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:18
+msgid "Angola"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:19
+msgid "Antarctica"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:20
+msgid "Argentina"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:21
+msgid "American Samoa"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:22
+msgid "Austria"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:23
+msgid "Australia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:24
+msgid "Aruba"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:25
+msgid "Azerbaijan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:26
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:27
+msgid "Barbados"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:28
+msgid "Bangladesh"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:29
+msgid "Belgium"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:30
+msgid "Burkina Faso"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:31
+msgid "Bulgaria"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:32
+msgid "Bahrain"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:33
+msgid "Burundi"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:34
+msgid "Benin"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:35
+msgid "Bermuda"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:36
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:37
+msgid "Bolivia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:38
+msgid "Brazil"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:39
+msgid "Bahama"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:40
+msgid "Bhutan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:41
+msgid "Bouvet Island"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:42
+msgid "Botswana"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:43
+msgid "Belarus"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:44
+msgid "Belize"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:45
+msgid "Canada"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:46
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:47
+msgid "Central African Republic"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:48
+msgid "Congo"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:49
+msgid "Switzerland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:50
+msgid "Ivory Coast"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:51
+msgid "Cook Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:52
+msgid "Chile"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:53
+msgid "Cameroon"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:54
+msgid "China"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:55
+msgid "Colombia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:56
+msgid "Costa Rica"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:57
+msgid "Cuba"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:58
+msgid "Cape Verde"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:59
+msgid "Christmas Island"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:60
+msgid "Cyprus"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:61
+msgid "Czech Republic"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:62
+msgid "Germany"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:63
+msgid "Djibouti"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:64
+msgid "Denmark"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:65
+msgid "Dominica"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:66
+msgid "Dominican Republic"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:67
+msgid "Algeria"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:68
+msgid "Ecuador"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:69
+msgid "Estonia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:70
+msgid "Egypt"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:71
+msgid "Western Sahara"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:72
+msgid "Eritrea"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:73
+msgid "Spain"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:74
+msgid "Ethiopia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:75
+msgid "Finland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:76
+msgid "Fiji"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:77
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:78
+msgid "Micronesia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:79
+msgid "Faroe Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:80
+msgid "France"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:81
+msgid "France, Metropolitan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:82
+msgid "Gabon"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:83
+msgid "United Kingdom (Great Britain)"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:84
+msgid "Grenada"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:85
+msgid "Georgia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:86
+msgid "French Guiana"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:87
+msgid "Ghana"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:88
+msgid "Gibraltar"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:89
+msgid "Greenland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:90
+msgid "Gambia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:91
+msgid "Guinea"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:92
+msgid "Guadeloupe"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:93
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:94
+msgid "Greece"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:95
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:96
+msgid "Guatemala"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:97
+msgid "Guam"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:98
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:99
+msgid "Guyana"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:100
+msgid "Hong Kong"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:101
+msgid "Heard & McDonald Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:102
+msgid "Honduras"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:103
+msgid "Croatia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:104
+msgid "Haiti"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:105
+msgid "Hungary"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:106
+msgid "Indonesia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:107
+msgid "Ireland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:108
+msgid "Israel"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:109
+msgid "India"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:110
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:111
+msgid "Iraq"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:112
+msgid "Islamic Republic of Iran"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:113
+msgid "Iceland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:114
+msgid "Italy"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:115
+msgid "Jamaica"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:116
+msgid "Jordan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:117
+msgid "Japan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:118
+msgid "Kenya"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:119
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:120
+msgid "Cambodia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:121
+msgid "Kiribati"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:122
+msgid "Comoros"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:123
+msgid "St. Kitts and Nevis"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:124
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:125
+msgid "Korea, Republic of"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:126
+msgid "Kuwait"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:127
+msgid "Cayman Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:128
+msgid "Kazakhstan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:129
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:130
+msgid "Lebanon"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:131
+msgid "Saint Lucia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:132
+msgid "Liechtenstein"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:133
+msgid "Sri Lanka"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:134
+msgid "Liberia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:135
+msgid "Lesotho"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:136
+msgid "Lithuania"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:137
+msgid "Luxembourg"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:138
+msgid "Latvia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:139
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:140
+msgid "Morocco"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:141
+msgid "Monaco"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:142
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:143
+msgid "Madagascar"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:144
+msgid "Marshall Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:145
+msgid "Mali"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:146
+msgid "Mongolia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:147
+msgid "Myanmar"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:148
+msgid "Macau"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:149
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:150
+msgid "Martinique"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:151
+msgid "Mauritania"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:152
+msgid "Monserrat"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:153
+msgid "Malta"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:154
+msgid "Mauritius"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:155
+msgid "Maldives"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:156
+msgid "Malawi"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:157
+msgid "Mexico"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:158
+msgid "Malaysia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:159
+msgid "Mozambique"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:160
+msgid "Namibia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:161
+msgid "New Caledonia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:162
+msgid "Niger"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:163
+msgid "Norfolk Island"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:164
+msgid "Nigeria"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:165
+msgid "Nicaragua"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:166
+msgid "Netherlands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:167
+msgid "Norway"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:168
+msgid "Nepal"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:169
+msgid "Nauru"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:170
+msgid "Niue"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:171
+msgid "New Zealand"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:172
+msgid "Oman"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:173
+msgid "Panama"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:174
+msgid "Peru"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:175
+msgid "French Polynesia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:176
+msgid "Papua New Guinea"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:177
+msgid "Philippines"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:178
+msgid "Pakistan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:179
+msgid "Poland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:180
+msgid "St. Pierre & Miquelon"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:181
+msgid "Pitcairn"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:182
+msgid "Puerto Rico"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:183
+msgid "Portugal"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:184
+msgid "Palau"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:185
+msgid "Paraguay"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:186
+msgid "Qatar"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:187
+msgid "Reunion"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:188
+msgid "Romania"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:189
+msgid "Russian Federation"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:190
+msgid "Rwanda"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:191
+msgid "Saudi Arabia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:192
+msgid "Solomon Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:193
+msgid "Seychelles"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:194
+msgid "Sudan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:195
+msgid "Sweden"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:196
+msgid "Singapore"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:197
+msgid "St. Helena"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:198
+msgid "Slovenia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:199
+msgid "Svalbard & Jan Mayen Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:200
+msgid "Slovakia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:201
+msgid "Sierra Leone"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:202
+msgid "San Marino"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:203
+msgid "Senegal"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:204
+msgid "Somalia"
+msgstr ""
+
+# as in 'join community Ziguinchor'
+#: .\apps\userprofile\countries.py:205
+#, fuzzy
+msgid "Suriname"
+msgstr "nom"
+
+#: .\apps\userprofile\countries.py:206
+msgid "Sao Tome & Principe"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:207
+msgid "El Salvador"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:208
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:209
+msgid "Swaziland"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:210
+msgid "Turks & Caicos Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:211
+msgid "Chad"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:212
+msgid "French Southern Territories"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:213
+msgid "Togo"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:214
+msgid "Thailand"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:215
+msgid "Tajikistan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:216
+msgid "Tokelau"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:217
+msgid "Turkmenistan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:218
+msgid "Tunisia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:219
+msgid "Tonga"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:220
+msgid "East Timor"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:221
+msgid "Turkey"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:222
+msgid "Trinidad & Tobago"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:223
+msgid "Tuvalu"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:224
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:225
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:226
+msgid "Ukraine"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:227
+msgid "Uganda"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:228
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:229
+msgid "United States of America"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:230
+msgid "Uruguay"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:231
+msgid "Uzbekistan"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:232
+msgid "Vatican City State (Holy See)"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:233
+msgid "St. Vincent & the Grenadines"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:234
+msgid "Venezuela"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:235
+msgid "British Virgin Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:236
+msgid "United States Virgin Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:237
+msgid "Viet Nam"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:238
+msgid "Vanuatu"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:239
+msgid "Wallis & Futuna Islands"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:240
+msgid "Samoa"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:241
+msgid "Yemen"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:242
+msgid "Mayotte"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:243
+msgid "Yugoslavia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:244
+msgid "South Africa"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:245
+msgid "Zambia"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:246
+msgid "Zaire"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:247
+msgid "Zimbabwe"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:251
+msgid "Unknown or unspecified country"
+msgstr ""
+
+#: .\apps\userprofile\countries.py:255
+msgid "This value must be in COUNTRIES setting in localflavor.generic package."
+msgstr ""
+
+#: .\apps\userprofile\forms.py:59
+#, python-format
+msgid "The file type is invalid: %s"
+msgstr "Type de ficher non valable: %s"
+
+#: .\apps\userprofile\forms.py:64
+msgid "You must enter one of the options"
+msgstr "Il faut choisir un des suivants"
+
+#: .\apps\userprofile\forms.py:91
+msgid "You must select a portion of the image with a minimum of 96x96 pixels."
+msgstr "Sélectionner une partie de la photo avec au moins 96x96 pixels."
+
+# as in 'join community Ziguinchor'
+#: .\apps\userprofile\forms.py:97
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:20
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:5
+#: .\apps\userprofile\templates\userprofile\profile\public.html.py:33
+#, fuzzy
+msgid "Username"
+msgstr "nom"
+
+#: .\apps\userprofile\forms.py:98
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:21
+msgid "E-mail address"
+msgstr "Adresse email"
+
+#: .\apps\userprofile\forms.py:99
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:26
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:17
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\apps\userprofile\forms.py:100
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:23
+msgid "Password (again)"
+msgstr "Mot de passe (retaper le mot de passe)"
+
+#: .\apps\userprofile\forms.py:108
+msgid "That username has invalid characters. The valid values are letters, numbers and underscore."
+msgstr "Le nom d'utilisatuer contient des caractères non valables. Les valeurs possibles incluent les lettres, les chiffres et l'aérobase"
+
+#: .\apps\userprofile\forms.py:113
+msgid "The username is already registered."
+msgstr "Le nom d'utilisateur existe déjà."
+
+#: .\apps\userprofile\forms.py:122
+msgid "The passwords inserted are different."
+msgstr "Les mots de passe sont différents."
+
+#: .\apps\userprofile\forms.py:134
+#: .\apps\userprofile\forms.py:136
+#: .\apps\userprofile\forms.py:155
+msgid "That e-mail is already used."
+msgstr "Adresse email déjà inscrite"
+
+#: .\apps\userprofile\forms.py:140
+msgid "That e-mail is already being confirmed."
+msgstr "Adresse email est en train d'être confirmée"
+
+#: .\apps\userprofile\forms.py:168
+msgid "That e-mail isn't registered."
+msgstr "Adresse email non inscrite"
+
+#: .\apps\userprofile\models.py:52
+#, python-format
+msgid "%s's profile"
+msgstr "Profil de %s"
+
+#: .\apps\userprofile\models.py:71
+#, python-format
+msgid "%s's Avatar"
+msgstr ""
+
+#: .\apps\userprofile\models.py:167
+#, python-format
+msgid "Email validation process for %(user)s"
+msgstr ""
+
+#: .\apps\userprofile\views.py:142
+#: .\apps\userprofile\views.py:177
+msgid "Your profile information has been updated successfully."
+msgstr ""
+
+#: .\apps\userprofile\views.py:211
+msgid "Your profile information has been removed successfully."
+msgstr ""
+
+#: .\apps\userprofile\views.py:321
+msgid "Your new avatar has been saved successfully."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\menu.html.py:5
+msgid "Overview"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\menu.html.py:6
+#: .\apps\userprofile\templates\userprofile\profile\personal.html.py:36
+msgid "Personal information"
+msgstr "Information persone"
+
+#: .\apps\userprofile\templates\userprofile\menu.html.py:9
+msgid "Avatar"
+msgstr "Avatar"
+
+#: .\apps\userprofile\templates\userprofile\menu.html.py:11
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:62
+#: .\apps\userprofile\templates\userprofile\profile\public.html.py:38
+msgid "Location"
+msgstr "Lieu"
+
+#: .\apps\userprofile\templates\userprofile\menu.html.py:12
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:22
+msgid "Remove profile"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:23
+msgid "E-mail change"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:23
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:40
+#: .\apps\userprofile\templates\userprofile\account\email_validation_processed.html.py:20
+msgid "Add e-mail"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:24
+msgid "New e-mail address"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:34
+msgid "Send confirmation"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation.html.py:41
+#: .\apps\userprofile\templates\userprofile\account\email_validation_processed.html.py:21
+msgid "Insert the new e-mail address. An e-mail will be send to it for testing and confirmation"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:4
+msgid "E-mail validation successful"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:4
+msgid "E-mail change unsuccessful"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:14
+msgid "E-mail address validated successfully"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:16
+msgid "The key you received via e-mail is no longer valid. Please try the e-mail validation process again"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:23
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:22
+msgid "E-mail validation process"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:24
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:23
+msgid "You can manage the e-mail validation process from the"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_done.html.py:24
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:23
+msgid "overview page"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_processed.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\email_validation_processed.html.py:13
+msgid "E-mail change processed"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_processed.html.py:14
+msgid "An e-mail has been sent to the new e-mail address to verify and activate it. Please access to your e-mail and complete this process following the instructions specified in the e-mail body"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:19
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:36
+msgid "Resend e-mail validation"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:20
+msgid "Insert your e-mail address"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:30
+msgid "Resend confirmation"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset.html.py:37
+msgid "If you haven't validated your e-mail address yet you couldn't get into the site. Insert the e-mail address yu have registered with so we can resend the validation e-mail to you again"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:4
+msgid "Validation e-mail sent"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:4
+msgid "Your user account was already active"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:14
+msgid "We've e-mailed you the e-mail validation link"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\email_validation_reset_response.html.py:16
+msgid "Your e-mail was already validated"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:19
+msgid "User login"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:36
+#, fuzzy
+msgid "Login"
+msgstr "entrer"
+
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:42
+msgid "Utilities"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:44
+msgid "Lost your password?"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\login.html.py:46
+msgid "Sign up!"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\logout.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\logout.html.py:9
+msgid "Logged out"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\logout.html.py:12
+msgid "You've been logged out"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\logout.html.py:12
+msgid "Log in again"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:23
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:4
+msgid "Password change for"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:24
+msgid "Old password"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:30
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:26
+msgid "New password"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:36
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:32
+msgid "Confirm password"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:46
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:42
+msgid "Change"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:52
+#: .\apps\userprofile\templates\userprofile\account\password_change_done.html.py:19
+msgid "Password change"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change.html.py:53
+#: .\apps\userprofile\templates\userprofile\account\password_change_done.html.py:20
+msgid "Password change utility page. Please enter your new password twice so we can verify you typed it in correctly"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change_done.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\password_reset_complete.html.py:4
+msgid "Password change successful"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_change_done.html.py:13
+msgid "The password has been changed successfully"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_expired.html.py:4
+msgid "Password key expired"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_expired.html.py:9
+msgid "The password key you're trying to use is expired. Please, request a new one"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:20
+#: .\apps\userprofile\templates\userprofile\account\password_reset_complete.html.py:19
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:55
+msgid "Password reset"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:31
+msgid "Reset my password"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:37
+#: .\apps\userprofile\templates\userprofile\account\password_reset_done.html.py:16
+msgid "Password reset form"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset.html.py:38
+#: .\apps\userprofile\templates\userprofile\account\password_reset_done.html.py:17
+msgid "Forgotten your password? Enter your e-mail address, and we'll reset your password and e-mail the new one to you"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_complete.html.py:13
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_complete.html.py:20
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:56
+msgid "Password reset utility page. Please enter your new password twice so we can verify you typed it in correctly"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:47
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_confirm.html.py:48
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a new password reset."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_done.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\password_reset_done.html.py:9
+msgid "Password reset successful"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\password_reset_done.html.py:10
+msgid "We've e-mailed you the instructions to obtain a new password. You should be receiving it shortly"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration.html.py:4
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:4
+msgid "User registration"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration.html.py:22
+#: .\apps\userprofile\templates\userprofile\account\registration_done.html.py:20
+msgid "Register a new account"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration.html.py:23
+#: .\apps\userprofile\templates\userprofile\account\registration_done.html.py:21
+msgid "Joining this community is quick and easy. You only need to fill the form to get access to all the private content"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration_done.html.py:4
+msgid "Registration complete"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration_done.html.py:10
+msgid "You have successfully registered a new account, and an account activation url has been sent to your e-mail address. You must access this message on your e-mail account to finish the registration process."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\registration_done.html.py:14
+#, python-format
+msgid "You have successfully registered a new account. Go to the <a href=\"%(overview_url)s\">login page</a> to authenticate and start using this site."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:11
+msgid "E-mail"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:11
+msgid "optional"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\account\includes\registration_form.html.py:33
+msgid "Register"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:4
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:38
+msgid "Choose the location of your avatar"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:41
+msgid "Select an image from disk"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:43
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:49
+#: .\apps\userprofile\templates\userprofile\avatar\crop.html.py:35
+msgid "Done"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:47
+msgid "Select an image from a remote URL. Put the URL on the input below and we'll retrieve the image for you"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:54
+msgid "Search on Picasa Web"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:79
+#: .\apps\userprofile\templates\userprofile\avatar\crop.html.py:41
+msgid "Avatar selection page"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:80
+#: .\apps\userprofile\templates\userprofile\avatar\crop.html.py:42
+msgid "You have several options to select the image you want as avatar on your profile"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\choose.html.py:86
+msgid "Delete"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\avatar\crop.html.py:4
+#: .\apps\userprofile\templates\userprofile\avatar\crop.html.py:19
+msgid "Crop &amp; resize the area you want"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:4
+msgid "Delete personal information"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:14
+msgid "Delete your personal information"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:15
+msgid "Are you sure?"
+msgstr "Vous êtes sûr ?"
+
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:15
+msgid "Yes"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\delete.html.py:23
+msgid "It erases all your private data except your username. You can refill the information later if you want to"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:4
+#, python-format
+msgid "%(user)s's Dashboard"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:21
+msgid "Define your location"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:21
+msgid "Auto-discover location"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:22
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:53
+#: .\apps\userprofile\templates\userprofile\profile\public.html.py:35
+msgid "Country"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:22
+msgid "Loading..."
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:26
+msgid "Location:"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:27
+msgid "Position"
+msgstr ""
+
+# as in 'the name with which i would like to be referred'
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:35
+#: .\apps\userprofile\templates\userprofile\profile\personal.html.py:30
+#, fuzzy
+msgid "Save"
+msgstr "quitter"
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:40
+msgid "Location information"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\location.html.py:41
+msgid "Define your location information"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:4
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:32
+msgid "Overview of your profile"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:38
+msgid "Change avatar"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:38
+msgid "Add avatar"
+msgstr ""
+
+# as in 'join community Ziguinchor'
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:43
+#, fuzzy
+msgid "Username:"
+msgstr "nom"
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:44
+msgid "E-mail:"
+msgstr "Courriel:"
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:46
+msgid "Not set yet"
+msgstr "Pas encore créé"
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:48
+msgid " (Not validated)"
+msgstr " (Pas encore validé) "
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:57
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:66
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:75
+msgid "Not set"
+msgstr ""
+
+# as in "i am a member of this village"
+# show all members of a village
+# e.g. '.citizens village_name'
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:93
+#, fuzzy
+msgid "Management:"
+msgstr "Gestion :"
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:94
+msgid "Change password"
+msgstr "Modifier mot de passe"
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:96
+msgid "Change your e-mail address"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:96
+msgid "Add your e-mail address"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:97
+msgid "Resend validation e-mail"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:101
+msgid "Add location"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\overview.html.py:103
+msgid "Change location"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\personal.html.py:4
+#: .\apps\userprofile\templates\userprofile\profile\personal.html.py:27
+msgid "Edit your personal information"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\personal.html.py:37
+msgid "Insert some information about you"
+msgstr ""
+
+#: .\apps\userprofile\templates\userprofile\profile\public.html.py:27
+#, python-format
+msgid "Public profile of %(user)s"
+msgstr ""
+
+#: .\apps\userprofile\templatetags\avatars.py:98
+msgid "You have to provide only the size as             an integer (both sides will be equal) and optionally, the             username."
+msgstr ""
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "None"
+msgstr "Aucun"
+
+msgid "Send SMS Messages"
+msgstr "Envoyer Les Messages SMS"
+
+msgid "Unknown"
+msgstr "inconnu"
+
+msgid "is free software, available under the"
+msgstr "est software libre, disponible avec"
+
+msgid "ALL VILLAGES"
+msgstr "TOUT LES COMMUNAUTES"
+
+#: .\apps\tostan\templates\tostan\export.html.py:14
+msgid "All Registered Phones"
+msgstr "Tous les Portable Enregistrés"
+
+#: .\apps\tostan\templates\tostan\export.html.py:19
+msgid "History of Member Registration"
+msgstr "Historique d'enregistrement"
+
+#: .\apps\tostan\templates\tostan\export.html.py:39
+msgid "Current Members"
+msgstr "Inscription actuelle"
+
+#: .\apps\tostan\templates\tostan\export.html.py:49
+msgid "Messages received from Tostan"
+msgstr "Messages reçus de Tostan"
+
+#: .\apps\smsforum\templates\smsforum\manage.html.py:15
+msgid "Manage communities"
+msgstr "Gestion des communautés"
+
+msgid "Manage memberships"
+msgstr "Gestion des membres"
+
+msgid "Villages not associated with Regions"
+msgstr "Les villages qui ne sont pas liées à un region"
+
+msgid "Community Name"
+msgstr "Nom de communauté"
+
+msgid "Community"
+msgstr "Communauté"
+

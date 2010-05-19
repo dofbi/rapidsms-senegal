@@ -1,0 +1,15 @@
+{% extends "smsforum/template_manage.html" %}
+{% load i18n %}
+{% block title %}The Jokko Initiative - A RapidSMS Project by Tostan{% endblock %}
+{% block content %}
+
+<div class="module">
+
+<h1>{% trans "Manage Messages" %}</h1>
+
+{% include 'smsforum/partials/region_community_dropdown.html' %}
+
+{% include 'smsforum/partials/messages.html' %}
+
+</div>
+{% endblock %}

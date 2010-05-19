@@ -1,0 +1,45 @@
+{% extends "smsforum/template_manage.html" %}
+{% load i18n %}
+{% block title %}The Jokko Initiative - A RapidSMS Project by Tostan{% endblock title %}
+{% block content %}
+
+<div class="module">
+
+<h1>{% trans "Manage Site Data" %}</h1>
+
+{% if orphan_villages %}
+<h4>Villages not associated with Regions</h4>
+{% for village in orphan_villages %}
+	<a href="{% url community village.pk %}">
+		{{village.name}}<p/>
+	</a>
+{% endfor %}
+{% endif %}
+
+{% if regions %}
+{% for region in regions %}
+<b>{% trans 'Region'%}</b>: <a href="{% url region region.pk %}">{{region.name}}</a>
+({{region.count}} Villages)
+<ul>
+	{% for village in region.villages %}
+	<li>
+		<a href="{% url community village.pk %}">
+			{{ village.name }}
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endfor %}
+{% endif %}
+
+{% if perms.smsforum.add_village %}
+	<a href="/village/add">Add a community</a><br/>
+{% endif %}
+
+{% if perms.smsforum.add_region %}
+	<a href="/region/add">Add a region</a><br/>
+{% endif %}
+
+</div>
+
+{% endblock content %}

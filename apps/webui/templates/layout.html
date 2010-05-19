@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load region %}
+{% load i18n %}
+{% load webui %}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>{% block title %}{% endblock %}{% block title_suffix %} - RapidSMS{% endblock %}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<!-- stylesheets -->
+		<link type="text/css" rel="stylesheet" href="/static/webui/stylesheets/layout.css" />
+		<link type="text/css" rel="stylesheet" href="/static/webui/stylesheets/modules.css" />
+		{% block stylesheets %}{% endblock %}
+		
+		<!-- javascripts (global, app, page) -->
+		<script type="text/javascript" src="/static/webui/javascripts/jquery-1.3.2.min.js"></script>{% for js in javascripts %}
+		<script type="text/javascript" src="{{ js }}"></script>{% endfor %}
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+		<div id="wrapper">
+			{% region "top" %}
+			{% block header %}
+			<div id="header">
+                                <div id="auth">
+                                        {% if user.is_authenticated %}
+                                        	<!-- rO: change URL to point to userprofile login/logout page for tostan -->
+                                            <p><a href="/logout/">{% trans 'Log out' %} {{ user.username }}</a></p>
+                                        {% else %}
+                                            <p><a href="/login/">{% trans 'Log in' %} </a></p>
+                                        {% endif %}
+                                </div>
+				<div id="branding">
+					<a href="/"><h1><b>RapidSMS</b></h1></a>
+				</div>
+				<ul id="tabs">{% for app in apps %}{% if app.tab_link %}
+                                        {% comment %} {% ifhasperm user app "can_view" %} {% endcomment %}
+					<li class="app-{{ app.type }}{% ifequal active_tab app.type %} active{% endifequal %}">
+						<a href="{{ app.tab_link }}"><span>{{ app.title }}</span></a>
+					</li>{% comment %} {% endifhasperm %} {% endcomment %}{% endif %}{% endfor %}
+				</ul>
+				{% block page_tabs %}
+				{% endblock %}
+			</div>
+			{% endblock %}
+			<div id="inner">
+				{% block subheader %}
+				{% endblock subheader %}
+
+				{% block content %}{% endblock %}
+			</div>
+
+			<!-- TODO: find a pretty place to put this -->
+			<div style="float:right">
+			<form action="/i18n/setlang/" method="post">
+			    <select name="language">
+			    {% for lang in LANGUAGES %}
+			      <option value="{{ lang.0 }}" 
+			      {% ifequal LANGUAGE_CODE lang.0 %}selected{% endifequal %}>
+			      {{ lang.1 }}</option>
+			    {% endfor %}
+			    </select>
+			<input type="submit" value="Go" />
+			</form>
+			</div>
+
+			<div id="inner">
+				{% block supersuperfooter %}
+					{% if previous_link %}
+					<p/>
+					<a href="{{previous_link}}">
+						<b>{% trans 'Back to Previous Page' %}</b>
+					</a>
+					{% endif %}<p/>
+				{% endblock supersuperfooter %}
+
+				{% block superfooter %}
+					<b><a href="/">{% trans 'Back to Home Page' %}</a></b>
+				{% endblock superfooter %}
+			</div>
+			{% block footer %}
+			<div id="footer">
+				<p class="rights">
+					{% trans 'Copyright' %} &copy; 2009 <a href="http://unicefinnovation.org">UNICEF</a> et al.<br />
+					<a href="http://github.com/unicefinnovation/rapidsms">RapidSMS</a> {% trans 'is free software, available under the' %} <a href="http://www.fsf.org/licensing/licenses/lgpl-3.0.html">LGPL</a>.
+				</p>				
+				{% region "footer" %}
+			</div>
+			{% endblock %}
+			{% region "bottom" %}
+		</div>
+	</body>
+</html>

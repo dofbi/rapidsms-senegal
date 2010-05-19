@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block title %}{{ title }} '{{ village.name }}'{% endblock %}
+{% block stylesheets %} 
+<link rel="stylesheet" href="/static/stylesheets/style.css" />
+{% endblock %}
+{% block content %}
+	{% include 'smsforum/partials/village.html' %}
+	 <a href="/add_alias/{{village.id}}">Ajouter un alias  a cette communaute </a>
+	{% include 'smsforum/partials/messages.html' %}
+	{% include 'smsforum/partials/citizens.html' %}
+{% endblock %}
+

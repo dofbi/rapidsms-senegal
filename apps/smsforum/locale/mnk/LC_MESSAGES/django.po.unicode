@@ -1,0 +1,255 @@
+# vim: ai ts=4 sts=4 et sw=4 encoding=utf-8
+#
+# Language mnk translations for SMSFORUM package.
+# Copyright (C) 2009 ORGANIZATION
+# Rowena <rowena@rowena>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2009-06-15 04:09+GMT\n"
+"PO-Revision-Date: 2009-06-15 04:21+0000\n"
+"Last-Translator: Rowena <rowena@rowena>\n"
+"Language-Team: Language Mandingo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+    
+#: app.py:158
+msgid "join"
+msgstr "koo"
+# entrer
+
+msgid "name"
+msgstr "ntoo"
+# as in 'the name with which i would like to be referred'
+
+#: app.py:158
+msgid "leave"
+msgstr "nbetaamala"
+
+# set language or show supported languages
+# e.g. '.language english'
+msgid "language"
+msgstr "kumakaŋo"
+
+msgid "help"
+msgstr "n’deemaa"
+# as in 'help me use this sms system'
+
+msgid "create"
+msgstr "dadaaroo"
+
+msgid "remove"
+msgstr "janjaŋo"
+# as in "i am a member of this village"
+
+# used for placeholder in help messages--e.g.
+# Please enter a name like 'village name'
+msgid "village_name"
+msgstr "saatee "
+
+msgid "member"
+msgstr "saateemoo"
+# as in "i am a member of this village"
+
+
+# show all members of a village
+# e.g. '.citizens village_name'
+msgid "citizens"
+msgstr "saateediŋo"
+
+#
+# SMS App strings
+#
+
+msgid "ou"
+msgstr "fo"
+
+# exception caught somewhere in processing, nothing
+# really to do!
+msgid "internal-error"
+msgstr "ERREUR: i la kiliri foloo man koyima i si doo kiima."
+#msgstr "Désolé, il y a eu un problème. Merci d’envoyer à nouveau plus tard" 
+
+# system does not know requested village.
+# ‘suggested’ is a list of known villages to suggest to the user
+msgid "village-not-found %(suggested)s"
+msgstr "i si yanfuma man niŋdulaaloŋ, ye mune miira %(suggested)s." 
+#msgstr "Désolé, je ne reconnais pas cet endroit. Est-ce que vous pensez de l'un de ceci? %(suggested)s"
+
+msgid "command-not-understood"
+msgstr "i si yanfuma nte ŋiy kumaŋaa fahamula. ‘123 n’deemee’ kii ma fo kumaŋaa doo kuwo se son daameŋ."
+# msgstr "Desole, je ne peux pas comprendre cet ordre. Envoyer '123 n’deemee' pour voir une liste des ordres acceptables"
+
+
+# sent when command not found, but the system found some
+# useful suggestions
+msgid "command-not-understood %(sug_1)s %(sug_rest)s"
+msgstr " i si yanfuma nte ŋiy kumaŋaa fahamula. Foo %(suggested)s?" 
+#msgstr "Désolé, je ne peux pas comprendre cet ordre. Est-ce que vous voulez dire: %(sug_1)s ou %(sug_rest)s?"
+
+msgid "blast-fail_message-too-long %(msg_len)d %(max_latin)d %(max_unicode)d"
+msgstr "nbe daani la iye i la kumajuloolu sutiyandi %(max_chars)d"
+#msgstr "Désolé, ce message fait plus de %(max_chars)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+#: app.py:204
+msgid "blast-fail_not-member-of-any-village"
+msgstr "i mu mintoo koo le ti.  u mu '123 jan koo' le ti"
+#msgstr "SVP, rejoignez une communauté avant d'envoyer un message. Escrivez '123 entrer' puis 'nom de village’."
+
+#: app.py:214
+msgid  "blast-message_outgoing %(text)s %(recipients)s %(sender)s"
+msgstr "%(text)s - %(sender)s"
+
+msgid "blast-acknowledge %(text)s %(recipients)s"
+msgstr "a lu la kumakaŋo kiita dulaa-doo to '%(recipients)s'"
+#msgstr "Votre message a été envoyé à: %(recipients)s"
+# Help with commands for specific languages. Should
+# send the commands for the given language translated to this
+# language.
+
+
+msgid "help-with-commands"
+msgstr "123 koo – 123 nbetaamala – 123 ntoo – 123 n'deemaa"
+
+# sent to user who does not have 'send' permissions
+msgid "inbound-message_rejected"
+msgstr "Vous ne pouvez pas envoyer les messages. Vous n'avez pas le permission d'envoyer."
+
+msgid "join-success %(village)s"
+msgstr "nseewota na duŋaa kaabiloo kono - a la mee tentula '%(village)s'!"
+#msgstr "Merci d'avoir rejoint la communauté '%(village)s' - bienvenue!"
+
+msgid "community"
+msgstr "kaabiloo"
+
+#: app.py:279
+msgid "language-set-fail_code-not-understood %(langs)s"
+msgstr "Le code pour changer de langue n'est pas reconnu. Merci d'envoyer à nouveau"
+# msgstr "Vous pouvez utiliser un des langues suivants: %(langs)s"
+
+msgid "language-set-success %(lang)s"
+msgstr "La langue que vous avez sélectionnée est '%(lang_code)s'"
+
+#: app.py:248
+msgid "leave-success %(villages)s"
+msgstr "a la mee la booŋaa seewo '%(villages)s' kono."
+#msgstr "Vous venez de quitter la communauté '%(villages)s' Au revoir!"
+
+msgid "leave-fail_village-not-found %(village)s"
+msgstr "man %(village)s loŋ"
+
+msgid "leave-fail_not-member-of-village"
+msgstr "mee la tara dulaa loŋ"
+#msgstr "Vous n'appartenez à aucune communauté pour le moment. Pour nous rejoindre, vueillez écrire '123' puis 'nom de village"
+
+msgid "name-register-success %(name)s"
+msgstr "mbee teentula %(name)s kaatu ŋee ila too taale. Abe a sotola kiliri wokiliri kono."
+#msgstr "Bonjour %(name)s. Merci d'avoir enregistré votre nom! Il apparaitra dorénavant sur tous les messages que vous envoyez"
+
+msgid "name-register-fail_name-too-long %(name)s %(max_char)d"
+msgstr "Yaafo, ndee helmere burii %(max_char)d alkule. Tiiɗno ndaɓɓinɗinaa nuldaa titin."
+# msgstr "Désolé, ce nom fait plus de %(max_char)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+msgid "name-acknowledge %(name)s"
+msgstr "nŋee i too taa na kiliri feŋo kono %(name)s"
+#msgstr "Vous etes enregistré avec le nom: %(name)s"
+
+
+
+# when 'member' command sent by user who is not member of
+# any village
+msgid "member-fail_not-member-of-village"
+msgstr "Vous n'etes pas parti d'aucune communauté"
+
+# successful response to 'member' command
+msgid "member-success %(village_names)s"
+msgstr "Vous etes membre des communautés suivants: %(village_names)s"
+
+# successful response to 'member' command when longer than n villages
+msgid "member-success_long-list %(village_names)s"
+msgstr "Ko ɗii renndooji tawe-ɗaa: "
+# msgstr "Vous etes membre des communautés suivants: %(village_names)s et de plus"
+
+###
+### Less important translations
+###
+
+
+msgid "help-with-commands_pul"
+msgstr ".koo .nbetaamala .ntoo .n'deemaa"
+
+msgid "help-with-commands_en"
+msgstr ".join (koo) .leave (nbetaamala) .name (ntoo) .help (n'deemaa)"
+
+msgid "help-with-commands_fr"
+msgstr ".naattugol (koo) .yaltude (nbetaamala) .yettoode (ntoo) .n'deemaa (n'deemaa)"
+
+msgid "help-with-commands_wol"
+msgstr ".duggu (koo) .genn (nbetaamala) .sant (ntoo) .help-wol (n'deemaa)"
+
+msgid "help-with-commands_dyu"
+msgstr ".unoken (koo) .upur (nbetaamala) .karees (ntoo) .rambenom (n'deemaa)"
+
+
+
+
+
+msgid "remove-fail_no-village"
+msgstr "Merci de renvoyer avec le nom d'une communauté, e.g.: '123 enlever village'"
+
+msgid "remove-success %(village)s"
+msgstr "La communauté '%(village)s' a eté enlevée."
+
+msgid "direct-blast-acknowledge %(text)s %(recipient)s"
+msgstr "Miu njettiima, mesaaj ma nawaama to sahre to '%(recipient)s'"
+#msgstr "Votre message a été envoyé à: %(recipient)s"
+
+msgid "direct-blast-fail_recipient-not-found %(recipient)s"
+msgstr "mi waawtaa hoccude oo nokku. Mbii-ɗaa '%(recipient)s'"
+
+msgid "direct-blast-fail_too-many-recipients %(recip_1)s and %(recip_rest)s"
+msgstr "Je ne peux pas trouver ce recipient. Est-ce que vous voulez dire %(recip_1)s?"
+
+
+
+# when 'citizens' command is sent with no village
+msgid "citizens-fail_no-village"
+msgstr "Merci de renvoyer avec le nom d'un communauté. Par example, '123 citizens communauté'"
+
+# successful response to 'citizen' command
+msgid "citizens-success %(village)s %(citizens)s"
+msgstr "%(village)s: %(citizens)s"
+
+# successful response to 'citizen' command when longer than n members
+msgid "citizens-success_long-list %(village)s %(citizens)s"
+msgstr "%(village)s: %(citizens)s e ko nanndi heen"
+
+msgid "create-village-fail_no-village-name"
+msgstr "SVP envoyer un nom pour le communauté, e.g. 123 naattugol 'nom de communauté'"
+
+msgid "create-village-fail_village-already-exists %(village)s"
+msgstr "La communauté %(village)s existe déjà"
+
+msgid "create-village-fail_name-too-long %(village)s %(max_char)d"
+msgstr "Désolé, ce nom fait plus de %(max_char)d caractères. Merci de le reccourcir et de l'envoyer à nouveau."
+
+msgid "create-village-success %(village)s"
+msgstr "Sahre nɗe sinicaa ko %(village)s"
+#msgstr "La communauté %(village)s a été créée"
+
+
+
+msgid "ERROR"
+msgstr "caɗeele"
+
+# exact match village argument not found
+msgid "village-not-known %(unknown)s"
+msgstr "yaafo mi heptinaani nokku o, laartu binndi maa dii."
+
+
+
+
+

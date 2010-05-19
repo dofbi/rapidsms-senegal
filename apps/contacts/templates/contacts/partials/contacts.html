@@ -1,0 +1,87 @@
+{% load i18n %}
+{% load pagination %}
+
+<div class="module">
+	<h2>{% trans "Contacts" %}
+		{% if village_filter %}
+			{% trans 'for' %} {{village_filter.name}}					
+		{% else %}
+			{% if region_filter %}
+				{% trans 'for' %} {{region_filter.name}}
+			{% endif %}
+		{% endif %}
+	</h2>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">{% trans "ID" %}</th>
+                {% if perms.reporters.can_view %}
+					<th scope="col">{% trans "Common Name" %}</th>
+					<th scope="col">{% trans "Given Name" %}</th>
+					<th scope="col">{% trans "Family Name" %}</th>
+	                <th scope="col">{% trans "Phone Number" %}</th>
+				{% endif %}
+				<th scope="col">{% trans "Gender" %}</th>
+                <th scope="col">{% trans "Age" %}</th>
+			</tr>
+		</thead>
+		<tbody>{% if contacts.object_list %}{% for contact in contacts.object_list %}
+			<tr>
+				<td>{{ contact.pk }}</td>
+                {% if perms.reporters.can_view %}
+                	<td>
+	                {% if edit_link %}
+	                    <a href="{{ edit_link }}{{ contact.pk }}"{% if contact.common_name %}>{{ contact.common_name }}{% else %} class="unknown">{% trans 'Unknown' %}{% endif %}</a>            
+	                {% else %}
+	                    <a href="/contact/edit/{{ contact.pk }}"{% if contact.common_name %}>{{ contact.common_name }}{% else %} class="unknown">{% trans 'Unknown' %}{% endif %}</a>            
+	                {% endif %}
+	                </td>
+	
+					<td>{% if contact.reporter.first_name %}{{ contact.reporter.first_name }}{% else %}<span class="na">n/a</span>{% endif %}</td>
+					<td>{% if contact.reporter.last_name %}{{ contact.reporter.last_name }}{% else %}<span class="na">n/a</span>{% endif %}</td>
+	                <td>{% if contact.reporter.connection.identity %}{{ contact.reporter.connection.identity }}{% else %}<span class="na">n/a</span>{% endif %}</td>
+				{% endif %}
+                <td>{% if contact.gender %}{{ contact.gender }}{% else %}<span class="na">n/a</span>{% endif %}</td>
+                <td>{% if contact.age_years %}{{ contact.age_years|floatformat:0 }}{% else %}<span class="na">n/a</span>{% endif %}</td>
+			</tr>{% endfor %}
+            <tr>
+                {% if perms.reporters.can_view %}
+	                <td colspan="8">
+	            {% else %}
+    	            <td colspan="5">
+				{% endif %}
+	                    <a href="/contact/add" class="add">
+	                        {% trans "Add a Contact" %}
+	                    </a>
+                </td>
+            </tr>
+			{% else %}
+			<tr class="no-data">
+                {% if perms.reporters.can_view %}
+	                <td colspan="8">
+	            {% else %}
+    	            <td colspan="5">
+				{% endif %}
+					{% trans "No members yet" %}
+					<a href="/contact/add" class="add">
+						{% trans "Add a Contact" %}
+					</a>
+				</td>
+			</tr>{% endif %}
+		</tbody>
+		<tfoot>
+			<tr>
+                {% if perms.reporters.can_view %}
+	                <td colspan="8">
+	            {% else %}
+    	            <td colspan="5">
+				{% endif %}
+					{% paginator contacts %}
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	   	<div class="toolbar">
+		   	<a href="csv" class="export">{% trans "Export to CSV" %}</a>
+		</div>
+</div>

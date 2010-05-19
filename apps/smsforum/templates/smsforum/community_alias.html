@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block content %}
+	<div class="module">
+        <fieldset style="width:50%;">
+        <legend>Ajout alias a une communaute</legend>
+        <table width=100%>
+        <tr>
+        <th>Donner une alias</th>
+        <td>
+                {% if msg %}  <h3>{{msg}}  </h3> {% endif %}
+                {% if error %}<h3>{{error}}</h3> {% endif %}
+                <!-- I know this isn't css-correct. But my stylesheets aren't working =b -->
+                <form action="/add_alias/{{village.id}}" method="POST">
+                <input  type="text"  name="alias"  value=""/>
+                <br/>
+                <input type="submit" value="Submit" />
+                <br/><a  href="/village/{{village.id}}">Retour sur la communaute</a>
+        </td>
+        </tr>
+        <tr>
+        <th><label>Alias({{village.name}})</lable></th>
+        <td>
+            <div style="height:100px;width:100%;overflow:scroll;">
+                    {% for aliascom  in  village.community.aliases.all %}
+                        <li>{{aliascom.alias}}</li>
+                    {% endfor %}
+            </div>
+        </td>
+        </tr>
+        </table>
+        </fieldset>
+    </div>
+    {% endblock %}
+

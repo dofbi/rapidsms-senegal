@@ -1,0 +1,63 @@
+{% extends "tostan/template_export.html" %}
+{% load i18n %}
+{% block title %}The Jokko Initiative - A RapidSMS Project by Tostan{% endblock %}
+{% block content %}
+
+<div class="module">
+
+<h2>{% trans "Export Data to Excel" %}</h2>
+
+<h4>{% trans "ALL VILLAGES" %}</h4>
+<ul>
+<li>
+	<a href="{% url export_contacts %}">
+		{% trans "All Registered Phones" %}
+	</a>
+</li>
+<li>
+	<a href="{% url export_registration %}">
+		{% trans "History of Member Registration" %}
+	</a>
+</li>
+<li>
+	<a href="{% url export_incoming_messages %}">
+		{% trans "Messages sent to Tostan" %}
+	</a>
+</li>
+<li>
+	<a href="{% url export_outgoing_messages %}">
+		{% trans "Messages received from Tostan" %}
+	</a>
+</li>
+</ul>
+
+{% for village in villages %}
+<h4>Village '{{ village.name }}'</h4>
+<ul>
+	<li>
+		<a href="{% url export_contacts village.pk %}">
+			{% trans "Current Members" %}
+		</a>
+	</li>
+	<li> 
+		<a href="{% url export_registration village.pk %}">
+			{% trans "History of Member Registration" %}
+		</a>
+	</li>
+	<li> 
+		<a href="{% url export_incoming_messages village.pk %}">
+			{% trans "Messages sent to Tostan" %}
+		</a>
+	</li>
+	<li> 
+		<a href="{% url export_outgoing_messages village.pk %}">
+			{% trans "Messages received from Tostan" %}
+		</a>
+	</li>
+</ul>
+{% endfor %}
+
+
+
+</div>
+{% endblock %}

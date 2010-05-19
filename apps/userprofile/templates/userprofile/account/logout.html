@@ -1,0 +1,14 @@
+{% extends "userprofile/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged out" %}{% endblock %}
+{% block robots %}noindex,nofollow{% endblock %}
+
+{% block userprofile_content %}
+<div class="notice">
+	<h3>{% trans "Logged out" %}</h3>
+	<!-- Customizing 'overview_url' to tostan dashboard -->
+	{% url dashboard as overview_url %}
+	<p class="large">{% trans "You've been logged out" %}. (<a href="{{ overview_url }}">{% trans 'Log in again' %}</a>)</p>
+</div>
+{% endblock %}

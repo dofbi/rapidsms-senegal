@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="module">
+
+<!-- not css-correct. fix later. -->
+{% if error %}<div style="color:red">{{ error }}</div>{% endif %}
+
+	<select name="village">
+		<option value="">{% trans 'Filter by Community' %}</option>
+		{% for village in villages %}
+			<option value="{{village.pk}}"
+				{% ifequal village village_filter %}
+					selected=True
+				{% endifequal %}			
+			>{{village.name}}</option>
+		{% endfor %}
+	</select>
+    <input type="submit" value="Filter" />
+</form>
+
+</div>
+
+
