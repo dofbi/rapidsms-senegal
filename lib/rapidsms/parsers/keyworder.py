@@ -43,10 +43,13 @@ class Keyworder(object):
         for token, regex in self.TOKEN_MAP:
             str = str.replace("(%s)" % token, regex)
 
-        return re.compile(self.pattern % str, re.IGNORECASE)
+        return re.compile(self.pattern % str, re.IGNORECASE + re.UNICODE)
 
     def __call__(self, *regex_strs):
         def decorator(func):
+            print func
+            print prefixen
+            print regexen
 
             # make the current prefix into something
             # iterable (so multiple prefixes can be
@@ -73,7 +76,9 @@ class Keyworder(object):
         return decorator
 
     def match(self, sself, str):
-        print "\n\nMATCHING\n\n: %s" % str
+        
+        print "REGEXN" 
+        print self.regexen
         for pat, func in self.regexen:
             match = pat.match(str)
             if match:

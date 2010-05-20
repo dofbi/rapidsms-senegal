@@ -1,34 +1,23 @@
-{% extends "layout.html" %}
+﻿{% extends base_template %}
 {% load i18n %}
-{% block title %}Message Log{% endblock %}
+{% block title %}{% trans "Message Log" %}{% endblock %}
 {% block content %}
-
-<div class="module">
-
-<h2>All Messages</h2>  
+<h2 style="text-align: {%trans 'left;' %}">{% trans "All Messages" %}</h2> 
 <table width="100%"> 
     <thead>
         <tr>
-            <th>Date</th>
-            <!-- HACK: creates a depenedency on contacts. 
-            TODO - add a check for contacts app installed -->
-            {% if perms.reporters.can_view %}
-	            <th>From</th>
-     		{% endif %}
-            <th>Backend</th>
-            <th>Message</th>
-            <th>Direction</th>
+            <th style="text-align: {%trans 'left;' %}">{% trans "Date" %}</th>
+            <th style="text-align: {%trans 'left;' %}">{% trans "From" %}</th>
+            <th style="text-align: {%trans 'left;' %}">{% trans "Backend" %}</th>
+            <th style="text-align: {%trans 'left;' %}">{% trans "Message" %}</th>
+            <th style="text-align: {%trans 'left;' %}">{% trans "Direction" %}</th>
         </tr>
     </thead>
     <tbody>
-        {% for message in messages.object_list %}
+        {% for message in messages %}
             <tr>
                 <td>{{message.date|date:"d-M-Y H:m:s"}}</td>
-	            <!-- HACK: creates a depenedency on contacts. 
-	            TODO - add a check for contacts app installed -->
-	            {% if perms.reporters.can_view %}
-	                <td>{{message.identity}}</td>
-	     		{% endif %}
+                <td>{{message.identity}}</td>
                 <td>{{message.backend}}</td>
                 <td>{{message.text}}</td>
                 <td>{% if message.is_incoming %}&lt&lt&lt
@@ -39,11 +28,4 @@
         {% endfor %}
     </tbody>
 </table>
-
-<div class="toolbar">
-   	<a href="/logger/csv/in" class="export">{% trans "Export Incoming Messages" %}</a>
-   	<a href="/logger/csv/out" class="export">{% trans "Export Outgoing Messages" %}</a>
-</div>
-
-</div>
 {% endblock %}

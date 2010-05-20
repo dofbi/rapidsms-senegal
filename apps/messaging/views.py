@@ -6,10 +6,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.exceptions import FieldError
 from django.core.urlresolvers import reverse
 from rapidsms.webui.utils import *
-from apps.reporters.models import *
+from reporters.models import *
 
 
-def index(req, template="messaging/index.html"):
+def index(req):
     def cookie_recips(status):
         flat = urllib.unquote(req.COOKIES.get("recip-%s" % status, ""))
         return map(str, re.split(r'\s+', flat)) if flat != "" else []
@@ -51,7 +51,7 @@ def index(req, template="messaging/index.html"):
         ("location__name", "Location")]
     
     return render_to_response(req,
-           template, {
+        "messaging/index.html", {
             "columns":   columns,
             "filtered":  filtered,
             "query":     req.GET.get("query", ""),

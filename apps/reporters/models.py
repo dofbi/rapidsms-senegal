@@ -3,11 +3,9 @@
 
 
 import re
-import logging
 from datetime import datetime
 from django.db import models
 from django.core.urlresolvers import reverse
-from rapidsms.connection import Connection
 from rapidsms.webui.managers import *
 from patterns.models import Pattern
 from locations.models import *
@@ -35,9 +33,6 @@ class Role(models.Model):
     
     def __unicode__(self):
         return self.name
-    
-    def __str__(self):
-        return unicode(self).encode('utf-8')
 
 
 class ReporterGroup(models.Model):
@@ -54,8 +49,6 @@ class ReporterGroup(models.Model):
     def __unicode__(self):
         return self.title
     
-    def __str__(self):
-        return unicode(self).encode('utf-8')
     
     # TODO: rename to something that indicates
     #       that it's a counter, not a queryset    
@@ -70,10 +63,7 @@ class Reporter(models.Model):
        could lead to multiple objects for the same "person". Usually, this
        model should be created through the WebUI, in advance of the reporter
        using the system - but there are always exceptions to these rules..."""
-    # unique_id could be an alias, phone number, ip, etc.
-    # just a unique way of representing a reporter
-    alias   = models.CharField(max_length=64, unique=True, null=True, blank=True)
-
+    alias      = models.CharField(max_length=20, unique=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name  = models.CharField(max_length=30, blank=True)
     groups     = models.ManyToManyField(ReporterGroup, related_name="reporters", blank=True)
@@ -81,7 +71,11 @@ class Reporter(models.Model):
     # here are some fields that don't belong here
     location   = models.ForeignKey(Location, related_name="reporters", null=True, blank=True)
     role       = models.ForeignKey(Role, related_name="reporters", null=True, blank=True)
+
+    def __unicode__(self):
+        return self.connection().identity
         
+
     # the language that this reporter prefers to
     # receive their messages in, as a w3c language tag
     #
@@ -94,19 +88,19 @@ class Reporter(models.Model):
     #   chichewa = ny
     #   klingon  = tlh
     #
-    language = models.CharField(max_length=10, null=True, blank=True)
+    language = models.CharField(max_length=10, blank=True)
 	
     # although it's impossible to enforce, if a user registers
     # themself (via the app.py backend), this flag should be set
     # indicate that they probably shouldn't be trusted
-    registered_self = models.BooleanField(default=True)
+    registered_self = models.BooleanField()
 	
 	
     class Meta:
         ordering = ["last_name", "first_name"]
 
         # define a permission for this app to use the @permission_required
-        # decorator in reporter's web views
+        # decorator in reporter's views
         # in the admin's auth section, we have a group called 'manager' whose
         # users have this permission -- and are able to see this section
         permissions = (
@@ -119,26 +113,18 @@ class Reporter(models.Model):
             self.first_name,
             self.last_name)).strip()
     
-    @property      
-    def signature(self):
-        if len(self.first_name)==0:
-            if len(self.last_name)==0:
-                return ( "%s" % self.alias )
-            return ( "%s" % self.last_name )
-        return self.full_name()        
-    
     def __unicode__(self):
         return self.full_name()
     
     def __repr__(self):
-        return "%r (%r)" % (
+        return "%s (%s)" % (
             self.full_name(),
             self.alias)
     
     def __json__(self):
         return {
             "pk":         self.pk,
-            "alias":   self.alias,
+            "alias":      self.alias,
             "first_name": self.first_name,
             "last_name":  self.last_name,
             "str":        unicode(self) }
@@ -152,7 +138,7 @@ class Reporter(models.Model):
             # was passed in, and if they are already linked then this
             # reporter already exists
             existing_conn = PersistantConnection.objects.get\
-                (backend=connection.backend, alias=connection.identity)
+                (backend=connection.backend, identity=connection.identity)
             # this currently checks first and last name, location and role.
             # we may want to make this more lax
             filters = {"first_name" : reporter.first_name,
@@ -227,31 +213,14 @@ class Reporter(models.Model):
         alias = unique(re.sub(r"[^a-zA-Z]", "", flat_name))
         return (alias.lower(), flat_name, "")
     
-    def set_preferred_connection(self, conn):
-        connections = PersistantConnection.objects.filter(reporter=self)
-        for connection in connections:
-            if connection.preferred == True and connection != conn:
-                connection.preferred = False
-                connection.save()
-        conn.preferred = True
-        conn.save()
     
-    @property
     def connection(self):
         """Returns the connection object last used by this Reporter.
            The field is (probably) updated by app.py when receiving
            a message, so depends on _incoming_ messages only."""
         
-        # return preferred connection, if one has been set
-        try:
-            return self.connections.get(preferred=True)
-        except PersistantConnection.MultipleObjectsReturned:
-            # this should never happen
-            logging.error("Reporter has multiple preferred connections!")
-            pass
-        except PersistantConnection.DoesNotExist:
-            pass
-        
+        # TODO: add a "preferred" flag to connection, which then
+        # overrides the last_seen connection as the default, here
         try:
             return self.connections.latest("last_seen")
         
@@ -277,24 +246,7 @@ class Reporter(models.Model):
         # return the latest, or none, if they've
         # has never been seen on ANY connection
         return max(timedates) if timedates else None
-    
-    def send_message(self, router, msg):
-        be = router.get_backend(self.connection.backend.slug)
-        be.message(self.connection.identity, msg).send()
-        
-    def get_profile(self):
-        """ loosely based on djagno's user.get_profile()
-        raises <profile_class>.DoesNotExist if profile not defined
-        """
-        # for now, return any profile
-        return self.profile.get()
-        # TODO: define the profile to return in a django setting
-        # in the same way django's user.get_profile depends on 
-        # settings.AUTH_PROFILE_MODULE
-            
-    @property
-    def profile(self):
-        return self.get_profile()
+
 
 class PersistantBackend(models.Model):
     """This class exists to provide a primary key for each
@@ -338,7 +290,7 @@ class PersistantConnection(models.Model):
     identity  = models.CharField(max_length=30)
     reporter  = models.ForeignKey(Reporter, related_name="connections", blank=True, null=True)
     last_seen = models.DateTimeField(blank=True, null=True)
-    preferred = models.BooleanField(default=False)
+    
     
     class Meta:
         verbose_name = "Connection"
@@ -395,81 +347,4 @@ class PersistantConnection(models.Model):
            the Model and view layers, but the folks in #django don't have any
            better suggestions."""
         return "%s?connection=%s" % (reverse("add-reporter"), self.pk)
-
-    @property
-    def connection(self):
-        return Connection(self.backend.slug, \
-                          self.identity)
-
-#
-# Module level methods (more or less equiv to Java static methods)
-# Read online that this is a cleaner way to do this than @classmethod
-# or @staticmethod which can have weird calling behavior
-#
-def backend_from_message(msg, save=True):
-    """
-    Create a PersistantConnection object from a Message.
-
-    If 'save' is True, object is saved to DB before 
-    returning.
-
-    """
-    
-    slug = msg.connection.backend.slug
-
-    rs=PersistantBackend.objects.filter(slug=slug)
-    cc=None
-    if len(rs)==0:
-        cc=PersistantBackend(slug=slug, title=slug)
-        if save:
-            cc.save()
-    else:
-        cc=rs[0]
-        
-    return cc
-
-def reporter_from_message(msg,save=True):
-    return connection_from_message(msg,save).reporter
-
-def connection_from_message(msg,save=True):
-    """
-    Create, or retrieve, a ChannelConnection from
-    a message.
-
-    E.g. Phone# + Service Provider backend
-
-    """
-    # Get the comm channel
-    backend=backend_from_message(msg)
-    u_id=msg.connection.identity
-
-    # try to get an existing ChannelConnection
-    connection=None
-    rs=PersistantConnection.objects.filter(identity__exact=u_id, \
-                                           backend__exact=backend)
-    if len(rs)==0 or rs[0].reporter is None:
-        # didn't find an existing connection, which means this specific
-        # PersisentConnection (e.g. service provider) and id (e.g. phone number)
-        # combo aren't known, so we need a blank Reporter for this combo.
-        reporter=Reporter() # debug id is only 16 char
-        reporter.alias = u_id
-        reporter.save()
-        if len(rs)==0:
-            connection=PersistantConnection(identity=u_id,\
-                                            backend=backend,\
-                                            reporter=reporter)
-        else:
-            rs[0].reporter = reporter
-            connection = rs[0]
-        if save:
-            connection.save()
-    else:
-        connection=rs[0]
-    
-    # cache channel connection back ptr for easy responses,
-    # just in runtime object, not in db
-    connection.reporter.connection_created_from = connection
-    return connection
-
-
 

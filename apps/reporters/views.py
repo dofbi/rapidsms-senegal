@@ -40,17 +40,11 @@ def check_reporter_form(req):
         for field in Reporter._meta.fields
         if req.POST.get(field.name, "") == ""
            and field.blank == False]
-
-    exists = []
-    alias = req.POST.get("alias","")
-    if Reporter.objects.filter( alias=alias ):
-        exists = ['alias']
     
     # TODO: add other validation checks,
     # or integrate proper django forms
     return {
-        "missing": missing,
-        "exists": exists }
+        "missing": missing }
 
 
 def update_reporter(req, rep):

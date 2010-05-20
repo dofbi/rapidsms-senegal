@@ -1,0 +1,18 @@
+{% extends base_template %}
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %}{% endblock %}
+{% block javascripts %}
+<script type="text/javascript" src="/static/webapp/javascripts/jquery.flot.js"></script>
+<script type="text/javascript" src="/static/webapp/javascripts/jquery.flot.pie.pack.js"></script>
+<!--[if IE]><script type="text/javascript" src="/static/webapp/javascripts/excanvas.pack.js"></script>
+<![endif]-->
+{% endblock %}
+{% block content %}
+{% trans "Welcome to RapidSMS! " %}
+{% if user.is_authenticated %}
+{% trans "Click on a tab to explore." %}
+{% else %}                                        
+{% trans "Please" %} <a href="/accounts/login/">{% trans "log in" %}</a> {% trans "to continue." %} 
+{% endif %}  
+{% endblock %}

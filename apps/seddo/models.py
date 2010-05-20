@@ -1,8 +1,8 @@
 from django.db import models
 from datetime import datetime
 import re
-from rapidsms.message import Message
 from django.core.exceptions import ObjectDoesNotExist , MultipleObjectsReturned
+from config import *
 class Receiver(models.Model):
     phone_num = models.CharField(max_length =200)
     def __unicode__(self):

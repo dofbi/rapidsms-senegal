@@ -26,8 +26,7 @@ class Command(NoArgsCommand):
         # Set up a dictionary to serve as the environment for the shell, so
         # that tab completion works on objects that are imported at runtime.
         # See ticket 5082.
-        from django.conf import settings
-        imported_objects = {'settings': settings}
+        imported_objects = {}
         for app_mod in get_apps():
             app_models = get_models(app_mod)
             if not app_models:

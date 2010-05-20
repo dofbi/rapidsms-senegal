@@ -1,0 +1,4 @@
+setuptools
+setuptools-git
+pytz
+Django

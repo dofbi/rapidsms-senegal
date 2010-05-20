@@ -45,7 +45,7 @@ def describe_form(label, fields=None):
                     continue
                 if k == 'widget':
                     attrs[k] = v.__class__
-                elif k in ['help_text', 'label']:
+                elif k == 'help_text':
                     attrs[k] = force_unicode(v).strip()
                 else:
                     attrs[k] = v
@@ -56,7 +56,7 @@ def describe_form(label, fields=None):
                                                                                   'params': params })
                                                                                
     return '''
-from django import forms
+from django import newforms as forms
 from %(app_name)s.models import %(object_name)s
     
 class %(object_name)sForm(forms.Form):

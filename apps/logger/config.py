@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # vim: ai ts=4 sts=4 et sw=4
+from django.utils.translation import ugettext_lazy as _
 
-# Hide this for Tostan
-# This same info will be available on a per-village view
-# title = "Message Log"
-# tab_link = "/logger"
+title = _("Message Log")
+tab_link = "/logger"

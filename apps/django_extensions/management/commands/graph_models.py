@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
-from django_extensions.management.modelviz import generate_dot
+from extensions.management.modelviz import generate_dot
 
 class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
@@ -43,18 +43,15 @@ class Command(BaseCommand):
             raise CommandError("need pygraphviz python module ( apt-get install python-pygraphviz )")
 
         vizdata = ' '.join(dotdata.split("\n")).strip()
-	version = pygraphviz.__version__.rstrip("-svn")
-	try:
-	    if [int(v) for v in version.split('.')]<(0,36):
-                # HACK around old/broken AGraph before version 0.36 (ubuntu ships with this old version)
-                import tempfile
-                tmpfile = tempfile.NamedTemporaryFile()
-                tmpfile.write(vizdata)
-                tmpfile.seek(0)
-                vizdata = tmpfile.name
-	except ValueError:
-	    pass
-
+        if [int(v) for v in pygraphviz.__version__.split('.')]<(0,36):
+            ##raise CommandError("need version 0.36 or higher of pygraphviz")
+            # HACK around old/broken AGraph before version 0.36 (ubuntu ships with this old version)
+            import tempfile
+            tmpfile = tempfile.NamedTemporaryFile()
+            tmpfile.write(vizdata)
+            tmpfile.seek(0)
+            vizdata = tmpfile.name
         graph = pygraphviz.AGraph(vizdata)
         graph.layout(prog=kwargs['layout'])
         graph.draw(kwargs['outputfile'])
+

@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # vim: ai ts=4 sts=4 et sw=4
 
-"""
-For Tostan, we disable the default reporter behaviour 
-and implement most of the sms interaction in the Contacts app
-
-"""
-
 import re
 import rapidsms
 from rapidsms.parsers import Matcher
@@ -140,9 +134,6 @@ class App(rapidsms.app.App):
         conn.seen()
             
     
-    """
-    For Tostan, we disable the default reporter behaviour 
-    and implement most of the sms interaction in the Contacts app
     def handle(self, msg):
         matcher = Matcher(msg)
         
@@ -168,6 +159,7 @@ class App(rapidsms.app.App):
         # no matches, so this message is not
         # for us; allow processing to continue
         return False
+    
     
     def register(self, msg, name):
         try:
@@ -310,4 +302,3 @@ class App(rapidsms.app.App):
         msg.respond(
             self.__str(
                 resp, msg.reporter))
-    """
