@@ -1,0 +1,4 @@
+*.pyc
+*.swp
+__version__.py
+local.ini
