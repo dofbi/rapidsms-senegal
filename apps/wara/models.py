@@ -11,12 +11,6 @@ class Seminaire(models.Model):
     theme = models.CharField (max_length =160)
     date = models.DateTimeField (auto_now_add =True)
     def __unicode__(self):
-        return ("presentation_num :%s\
-		 theme :%s\
-		 date_presentation :%s"\
-                  %(self.presentateur_phone, \
-                    self.theme,\
-                    self.date_presentation)
-        )
+        return (" %s:%s:%s "%(self.phone  , self.theme , self.date))
 
 
