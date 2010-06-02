@@ -9,7 +9,7 @@ class Seminaire(models.Model):
     """
     phone = models.CharField (max_length =160)
     theme = models.CharField (max_length =160)
-    date = models.DateTimeField (auto_now_add =True)
+    date = models.DateTimeField ()
     def __unicode__(self):
         return (" %s:%s:%s "%(self.phone  , self.theme , self.date))
 
