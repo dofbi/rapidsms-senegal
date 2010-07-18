@@ -10,7 +10,15 @@ class Seminaire(models.Model):
     phone = models.CharField (max_length =160)
     theme = models.CharField (max_length =160)
     date = models.DateTimeField ()
+
+    #Add  attribute  name   to the  model
+    #to match Nokia web UI
+    nom  = models.CharField (max_length  = 160   ,  null =True ,  blank =True)
     def __unicode__(self):
-        return (" %s:%s:%s "%(self.phone  , self.theme , self.date))
+     
+         return    "phone  :%s  , theme :%s  , date : %s , nom  : %s"%\
+             (self.phone  , self.theme , self.date  , self.nom)
+
+     
 
 

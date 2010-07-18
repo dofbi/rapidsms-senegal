@@ -1,4 +1,7 @@
 *.pyc
 *.swp
 __version__.py
+*.py~
+*.db
+*.swo
 local.ini

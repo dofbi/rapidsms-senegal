@@ -1,72 +1,58 @@
 import rapidsms
+import json
 import urllib2
-from  twitter_handler import TwitterHandler
-from  models import SMSTwit 
-import threading
+from django.core.exceptions import ObjectDoesNotExist , MultipleObjectsReturned
+from  models import UserToken ,Message
+consumer_key    ="Exgy2LpTAuVCW9G61iafQ"
+consumer_secret ="ZOH2MHGOfRxBYr0haX8VweAZ3bjs389LcfKE3bWhHw"
 class App (rapidsms.app.App):
-    def start (self):
-        """
-        On demarrare l 'application qui va executer un demon 
-        qui tourne indefiniment pour regarder dans  la table 
-        [SMSTwit] 
-        1 - Pour chaque numero  , nous allons verifier 
-        si  l'utilisateur peut envoyer un twit en verifiant 
-        son compte chez  [http://twitter.connexionservice.com] 
-        avec le numero de  l'utilisateur .
-        Le systeme [http://twitter.connectionservice.com]
-        nous envoie le [user]  et  le [password] pour que nous 
-        puissons twitter 
-        """
-        def _get_auth_user (phone_number ):
-            """
-            Va regarder  dans  connection service si  on peut se connecter 
-            """
+    def handle (self, message):
+        def get_token_secret_from_website (phone):
+            '''Si le Token secret , n'est pas encore dans notre base de donnees '''
             url  = "http://twitter.connectionservice.com/?phone=%s"
-            ulr  = url%phone_number 
-            # Envoie la requete a connection service
-            # out doit etre en format json  {"user" :"dialune" : "passwod": "x"}
-            # si on a l'utilisateur et le mot de passe on peut alors twitter 
-            out  = urllib2.urlopen (url)
-            user  , password  = out.read ().values ()
-        def twit_loop(twit_interval = 10):
-            """
-            Verifie si on  doit twitter et twit par interval de 10 seconde 
-            """
-            while True:
-                twit_list  = SMStwit.objects.all ()
-                if twit_list and len (twit_list) > 0:
-                    for  twit  in twit_list :
-                        #Get user authorisation 
-                        #rs =_get_auth_user (twit.phone)
-                        #Pour le moment je n'ai pas l'autoriation de la part de [connectionsevice] 
-                        #alors je mets en dure mon user et mon mot de passe
-                        #et je n'appelle pas _get_auth_user ()
-                        
-                        if rs is not None :
-                                #user , password  = rs
-                                twit_hanldler  = TwitterHandler (user=None , password =None)
-                                self.log.info("user : %s , password :%s"%(user , password))
-                                #OK nous pouvons  twitter vers twiiter
-                                twit_handler.post_message (twit.txtmsg)
-                        else :
-                            print ("Utilsateur suivant a envoye un sms a apptwitter"
-                                  "mais n'est pas authorise a twitter :%"%twit.phone)
-                else :
-                    self.log.info("Aucun twit dans la base de donnee")
-                time.sleep (twit_interval)
-            self.log.info("Demmarage du proessus de AppTwitter")
-            threading.Thread (target= twit_loop , args= (10,))
+            url  = url%phone  
+            json_data  = urllib2.urlopen (url).read()
+            # Data contient le format suivant 
+            # data = {
+            #        "key": "234wxvfgrss uYHGGJHHH" ,
+            #        "secret": "GDHDHesxxbsUTTOKKKKq2344   "
+            #        }
+            data = json.load (json_data)
+        def get_token_secret_from_db (phone):
+            '''A partir du second twit nous stockons le token key et secret
+            dans notre base de donnees de cette maniere , nous avons plus
+            a le demander a connnectionservice'''
+            try:
+                return UserToken.objects.get (phone =phone)
+            except ObjectDoesNotExist :
+                # Nous n'avons pas le token key et le
+                # token secret dans notre base de donnees 
+                # il faut le demander a connection service
+                return None
+            except MultipleObjectsReturned:
+                return None
+        # Nous cherhons deja si le token key 
+        # et le token secret est en base de donnees
+        token  = get_token_secret_from_db(message.connection.identity)
+        if token:
+            key  =token.key
+            secret= token.secret
+        else:
+            token  = get_token_secret_from_website(message.connection.identity)
+            key = token.get ("key" , None)
+            secret =token.get ("secret" ,None)
+        import tweepy 
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(key, secret)
+        api = tweepy.API(auth)
+        api.update_status(message.text)
+        # Store into data base
+        UserToken.objects.get_or_create (token_key =key, token_secret =secret)
+        Message.objects.create (message)
+
     def parse (self, message):
         """Parse and annotate messages in the parse phase."""
         pass
-
-    def handle (self, message):
-        """Add your main application logic in the handle phase."""
-        SMSTwit.objects.create (
-            phone =message.connection.identity  ,
-            txtmsg=message.text)
-        message.respond ("Bien recu par SMS Twit application")
-
     def cleanup (self, message):
         """Perform any clean up after all handlers have run in the
            cleanup phase."""

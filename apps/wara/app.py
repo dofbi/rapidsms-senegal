@@ -23,16 +23,18 @@ class App (rapidsms.app.App):
            function , captures = self.kw.match (self, message.text)
            function (self,message ,*captures)
         except Exception , e:
-            print "Exception when handling message"
+            
+            print "Excpetion"
             print e
+            message.respond ("Invalid commande : wara theme [theme]  date [jour h] nom [nom]")
     
 
     @kw("help")
     def help (message):
         message.respond ("wara theme <theme> date <jour mois>")
 
-    @kw("wara theme (.+) date (\d\d? \d\d?)")
-    def add_presentation (self , message , theme , date):
+    @kw("wara theme (.+) date (\d\d? \d\d?) nom (.+)")
+    def add_presentation (self , message , theme , date , nom):
 	"""
 	Ajouter un nouveau presentateur au seminaire
 	"""
@@ -40,8 +42,10 @@ class App (rapidsms.app.App):
 	    jr  , hr  =tuple(date.split())
             an ,mois = localtime ()[0], localtime()[1]
             m.Seminaire.objects.create\
-            (theme=theme , phone =message.connection.identity,
-                    date=datetime (int (an),int (mois),int (jr),int (hr)))
+            (theme=theme , 
+             phone =message.connection.identity,
+             date=datetime (int (an),int (mois),int (jr),int (hr)),
+             nom =nom)
             message.respond ("Merci d'avoir proposer un theme  au seminaire ,\
                     tapez [wara themes] pour la liste")
             return True
@@ -57,8 +61,8 @@ class App (rapidsms.app.App):
         (WEST AFRICAN RESEARCH )
 	"""       
         def to_str(el):
-            return  "[Presentation: %s ,Date : le %s a %s Heures]"%\
-                        (el.theme  ,el.date.day ,  el.date.hour)
+            return  "[Presentation: %s ,Date : le %s a %s Heures ,Par :%s ]"%\
+                        (el.theme  ,el.date.day ,  el.date.hour ,  el.nom)
         def _get_presentation (old_list , given_el):
              try:
                    
